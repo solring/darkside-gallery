@@ -2,6 +2,7 @@ $prefix: "/src/assets/images";
 $path-github: "#{$prefix}/github.svg";
 $path-twitter: "#{$prefix}/twitter.svg";
 $path-tumblr: "#{$prefix}/tumblr.svg";
+$path-social: "#{$prefix}/socialmedia.svg";
 
 .icon-github {
   mask: url($path-github) no-repeat center;
@@ -16,12 +17,20 @@ $path-tumblr: "#{$prefix}/tumblr.svg";
 }
 
 .icon {
+  @include bg-theme-gradient();
   display: inline-block;
-  background: linear-gradient(60deg, $gradient-color1, $gradient-color2);
   height: 36px;
   width: 36px;
 
   &:hover{
     opacity: 0.5;
   }
+}
+
+.icon-socialmedia {
+  height: 36px;
+  width: 132px;
+
+  @include bg-theme-gradient();
+  mask: url($path-social) no-repeat center;
 }
