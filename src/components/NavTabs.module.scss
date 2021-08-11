@@ -1,0 +1,46 @@
+@import '../assets/style/configs/bootstrap/variables';
+
+.navtabs {
+  padding-top: 48px;
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  text-transform: capitalize;
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: rgba(255, 255, 255, 0.5);
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.markerSVG {
+  fill: $primary;
+}
+
+.markerWrap {
+  height: 24px;
+  position: relative;
+}
+
+.marker {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 16px);
+
+  transition: height .35s linear;
+  transform-origin: bottom;
+
+  height: 0;
+  overflow: hidden;
+
+  &.show {
+    height: 24px;
+  }
+}

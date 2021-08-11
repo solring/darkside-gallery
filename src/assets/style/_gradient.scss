@@ -1,0 +1,7 @@
+@mixin bg-theme-gradient() {
+  background: linear-gradient(60deg, $gradient-color1, $gradient-color2);
+}
+
+.bg-theme-gradient {
+  @include bg-theme-gradient();
+}

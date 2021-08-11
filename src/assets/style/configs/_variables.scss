@@ -1,0 +1,23 @@
+// ============================================
+// Other variables
+// ============================================
+$gradient-color1:       #4466aa;
+$gradient-color2:       #ee55aa;
+
+// Bootstrap breakpoints
+$bs-breakpoint-sm:        576px;
+$bs-breakpoint-md:        768px;
+$bs-breakpoint-lg:        992px;
+$bs-breakpoint-xl:        1200px;
+$bs-breakpoint-xxl:       1400px;
+
+// export to webpack
+:export {
+  gradientColor1: $gradient-color1;
+  gradientColor2: $gradient-color2;
+  bsBPsm: $bs-breakpoint-sm;
+  bsBPmd: $bs-breakpoint-md;
+  bsBPlg: $bs-breakpoint-lg;
+  bsBPxl: $bs-breakpoint-xl;
+  bsBPxxl: $bs-breakpoint-xxl;
+}
