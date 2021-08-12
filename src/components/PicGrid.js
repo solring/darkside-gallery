@@ -44,7 +44,7 @@ function assignRows(items, rowNum) {
   return rows
 }
 
-function PictureGrid(props) {
+function PicGrid(props) {
   const { items, onExausted } = props
 
   const lastEle = useRef()
@@ -76,7 +76,7 @@ function PictureGrid(props) {
   if(!items || items.length === 0) return <div></div>
 
   return (
-    <div className="row g-3">
+    <div className="row g-3 my-3 mx-sm-3">
       {rows.map((row, i) => (
         <div key={i} className="col" >
           {row.map((item, j) => {
@@ -92,10 +92,10 @@ function PictureGrid(props) {
   )
 }
 
-PictureGrid.propTypes = {
+PicGrid.propTypes = {
   items: PropTypes.array.isRequired,
   onExausted: PropTypes.func,
 }
 
-export default PictureGrid
+export default PicGrid
 

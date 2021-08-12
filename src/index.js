@@ -1,12 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.scss'
+import reportWebVitals from './reportWebVitals'
+
+import MainScreen from './components/MainScreen'
+
+// mock server
+import mockServer from './mockServer'
+
+import { Provider } from 'react-redux'
+import configureAppStore from './store'
+const store = configureAppStore()
+
+mockServer()
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <MainScreen />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -46,6 +46,11 @@ async function callApi(endpoint, method, json, {...customConfigs}) {
   }
 }
 
+function makeQuery(endpoint, query) {
+  const params = new URLSearchParams(query)
+  return endpoint + '?' + params.toString()
+}
+
 export default ({endpoint, method, query, json}) => {
   endpoint = query ? makeQuery(endpoint, query) : endpoint;
 

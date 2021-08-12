@@ -20,4 +20,9 @@ function hexToRGB(color) {
   ]
 }
 
-export {RGBtoHex, hexToRGB }
+function hexToRGBAStr(color, opacity) {
+  const [r, g, b] = hexToRGB(color)
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`
+}
+
+export { RGBtoHex, hexToRGB, hexToRGBAStr }

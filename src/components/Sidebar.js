@@ -21,7 +21,7 @@ function Sidebar(props) {
       </GradientWord>
 
       <h5 className="text-muted">Personal Gallery of Solring.</h5>
-      <ul className="mt-4">
+      <ul className="mt-4 d-inline-block mb-3">
         <SocialNetworkBtns />
       </ul>
     </header>

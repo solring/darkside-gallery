@@ -1,7 +1,7 @@
 import Tag from "./Tag";
 
 const decos = [
-  (story) => <div className="p-4 bg-primary">{story()}</div>
+  (story) => <div className="p-4 bg-light">{story()}</div>
 ]
 
 export default {

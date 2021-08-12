@@ -30,6 +30,22 @@ export default function() {
           }
         }
       })
+
+      this.post('/api/article', (schema, request) => {
+
+        const json = JSON.parse(request.requestBody);
+        const {start, length} = json;
+
+        console.log(`GET ARTICLE: all`);
+
+        return {
+          data: {
+            list: data.genItems(length),
+            next: start + length,
+            tags: tags
+          }
+        }
+      })
     }
   });
 }

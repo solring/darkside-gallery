@@ -6,14 +6,18 @@
   padding-right: 24px;
 
   background-color: #fff;
-  border-radius: 0 16px 16px 0;
   height: 100%;
 
   text-align: left;
 
+  box-shadow: 5px 0 7px 0 rgba(0,0,0,0.5);
+
   @media screen and (max-width: $bs-breakpoint-md){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     text-align: center;
-    border-radius: 0 0 16px 16px;
   }
 }
 
@@ -22,4 +26,9 @@
   overflow-wrap: break-word;
 
   margin-bottom: 60px;
+
+  @media screen and (max-width: $bs-breakpoint-lg){
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
 }

@@ -11,8 +11,6 @@ export default function useScrollThrottle(ele = window, delay) {
 
   let throttling = null
 
-  if (typeof ele === 'undefined') return pos
-
   function onScroll(e) {
 
     function doMeasure() {
@@ -39,5 +37,5 @@ export default function useScrollThrottle(ele = window, delay) {
     }
   })
 
-  return pos;
+  return pos
 }

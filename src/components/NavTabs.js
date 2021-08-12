@@ -1,5 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
+
+import { hexToRGBAStr } from '../utils/colorUtils'
+import { GRADIENT_COLOR1, GRADIENT_COLOR2 } from '../utils/constants'
 
 import styles from './NavTabs.module.scss'
 import { Collapse } from 'react-bootstrap'
@@ -13,40 +16,37 @@ const trangle = (
 )
 
 function NavTabs(props) {
-  const { items, onClick } = props
+  const { items, selected, selectedTags, onSelect, onTagSelect, scrollPos = 0 } = props
 
-  const [toggle, setToggle] = useState(false)
-  const [tags, setTags] = useState([])
-  const [active, setActive] = useState(-1)
+  const tags = (selected >= 0 && selected < items.length) ?
+                items[selected].tags : []
 
+  const toggle = tags && tags.length > 0;
 
-  const tabOnClick = (item, idx) => {
-    if (!item.tags || item.tags.length === 0) {
-      setActive(-1)
-      setToggle(false)
-      setTags([])
-    } else {
-      setActive(idx)
-      setTags(item.tags)
-      setToggle(true)
-    }
+  const pt = {
+    paddingTop: `${48 - Math.min(scrollPos, 24)}px`
+  }
+
+  const opacity = Math.max( (Math.min(scrollPos, 48)/48).toFixed(2) - 0.2 , 0)
+  const bg = {
+    background: `linear-gradient(${hexToRGBAStr(GRADIENT_COLOR1, opacity)}, ${hexToRGBAStr(GRADIENT_COLOR2, opacity)})`
   }
 
   return (
-    <nav className={styles.navtabs}>
+    <nav className={styles.navtabs} style={bg}>
 
-      <ul role="tablist" className={styles.inner}>
+      <ul role="tablist" className={styles.inner} style={pt}>
         {items.map((item, idx) => (
           <li key={idx} role="tab" className="d-inline-block">
             <a className={styles.item}
-              onClick={() => tabOnClick(item, idx)}>
+              onClick={() => onSelect(idx)}>
               {item.title}
             </a>
             <div className={styles.markerWrap}>
               <div className={`
                 text-center
                 ${styles.marker}
-                ${active === idx ? styles.show : ""}
+                ${selected === idx && toggle ? styles.show : ""}
               `}>
                 {trangle}
               </div>
@@ -55,18 +55,18 @@ function NavTabs(props) {
         ))}
       </ul>
 
-      <Collapse in={toggle} role="tabpanel" className="bg-primary">
+      <Collapse in={toggle} role="tabpanel" className="bg-light">
         <div>{/* Empty div is essential */}
 
         <div className="container">
           <div className="d-flex flex-wrap justify-content-center py-3">
-            {tags.map((t, idx) => (
+            {tags && tags.map((t, idx) => (
               <Tag
                 className="me-3"
-                key={idx} active={false}
-                onClick={() => onClick(t)}
+                key={idx} active={selectedTags && selectedTags[idx]}
+                onClick={() => onTagSelect(idx)}
               >
-                {t}
+                {`#${t}`}
               </Tag>
             ))}
           </div>
@@ -81,7 +81,11 @@ function NavTabs(props) {
 
 NavTabs.propTypes = {
   items: PropTypes.array.isRequired,
-  onClick: PropTypes.func,
+  selected: PropTypes.number.isRequired,
+  selectedTags: PropTypes.array.isRequired,
+  onSelect: PropTypes.func,
+  onTagSelect: PropTypes.func,
+  scollPos: PropTypes.number,
 }
 
 export default NavTabs

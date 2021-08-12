@@ -6,6 +6,8 @@ export const BS_BREAKPOINT_MD = "768px";
 export const BS_BREAKPOINT_LG = "992px";
 export const BS_BREAKPOINT_XL = "1200px";
 
+export const ARTICLE_BATCH_LEN = 10;
+
 export const categories = [
   {
     title: "fan-art",

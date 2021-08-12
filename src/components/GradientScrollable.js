@@ -1,10 +1,10 @@
-import React, { useRef } from 'react'
+import React, { useRef, useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import useScrollThrottle from '../hooks/useScrollThrottle'
 import { RGBtoHex, hexToRGB } from '../utils/colorUtils'
 
-function GradientScrollable({color1, color2, height, ...props}) {
+function GradientScrollable({color1, color2, height, onScroll, ...props}) {
   const DELAY = 50
 
   const ref = useRef()
@@ -32,6 +32,10 @@ function GradientScrollable({color1, color2, height, ...props}) {
     return n1
   }
 
+  useLayoutEffect(() => {
+    if(onScroll) onScroll(x, pos)
+  }, [x, pos])
+
   return (
     <div ref={ref} style={style} className={`${props.className}`}>
       {props.children}
@@ -43,6 +47,7 @@ GradientScrollable.propTypes = {
   color1: PropTypes.string.isRequired,
   color2: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
+  onScroll: PropTypes.func,
 }
 
 export default GradientScrollable

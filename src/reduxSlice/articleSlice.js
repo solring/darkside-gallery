@@ -2,6 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import fetchSlicer from './baseFetchSlicer'
 import { GetArticles } from '../api/api'
 
+// mock data
+import * as mock from '../utils/mockdata'
+
 const articleslicer = fetchSlicer('articles')
 
 export const fetchArticle = articleslicer.createFetchApi(GetArticles)

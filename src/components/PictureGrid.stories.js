@@ -1,4 +1,4 @@
-import PictureGrid from "./PictureGrid"
+import PicGrid from "./PicGrid"
 import {mockItem} from '../utils/mockdata'
 
 function randH() {
@@ -8,11 +8,11 @@ function randH() {
 const mockList = Array(24).fill(0).map(() => ({...mockItem, height: randH()}))
 
 export default {
-  title: 'PicGrid/PictureGrid',
-  component: PictureGrid
+  title: 'PicGrid/PicGrid',
+  component: PicGrid
 }
 
-const Template = (args) => <PictureGrid {...args} />
+const Template = (args) => <PicGrid {...args} />
 export const Default = Template.bind({})
 Default.args = {
   items: mockList
