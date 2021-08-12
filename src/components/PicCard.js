@@ -11,7 +11,7 @@ function PicCard(props) {
   }
 
   return (
-    <article className={styles.card} style={style}>
+    <article className={`${styles.card} ${props.className}`} style={style}>
       <img
         src={img}
         alt={title}

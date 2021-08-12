@@ -1,11 +1,12 @@
+@import '../assets/style/utils/_mixins.scss';
+
 .card {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
 
   img {
-    height: 100%;
-    object-fit: cover;
+    @include img-cover;
     z-index: 1001;
   }
 }
