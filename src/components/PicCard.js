@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { Reveal } from 'react-reveal'
+
 import styles from './PicCard.module.scss'
 
 function PicCard(props) {
@@ -11,24 +13,28 @@ function PicCard(props) {
   }
 
   return (
-    <article className={`${styles.card} ${props.className}`} style={style}>
-      <img
-        src={img}
-        alt={title}
-      />
-      <div className={styles.overlay}>
-        <div className={`p-3 ${styles.text}`}>
-          <h6>{title}</h6>
-          <p className={styles.subtitle}>{desc}</p>
-          <div>
-            {tags.map((t, i) => (
-              <small key={i} className="me-1">{t}</small>
-            ))}
+    <Reveal effect="fadeInUp" duration={1000}>
+      <article className={`${styles.card} ${props.className}`} style={style}>
+
+        <img
+          src={img}
+          alt={title}
+        />
+
+        <div className={styles.overlay}>
+          <div className={`p-3 ${styles.text}`}>
+            <h6>{title}</h6>
+            <p className={styles.subtitle}>{desc}</p>
+            <div>
+              {tags.map((t, i) => (
+                <small key={i} className="me-1">{t}</small>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-    </article>
+      </article>
+    </Reveal>
   )
 }
 

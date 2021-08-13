@@ -43,7 +43,7 @@ function Gallery(props) {
   const loadMoreArticles = () => {
     dispatch(fetchArticle({
       start: next,
-      category: cats[cat], // current category
+      category: cat === -1 ? "" : cats[cat].title, // current category
       length: vars.ARTICLE_BATCH_LEN,
     }))
   }
@@ -65,7 +65,7 @@ function Gallery(props) {
       } else {
         setTags(null)
       }
-      loadCategory(cats[cat])
+      loadCategory(cats[cat].title)
     }
     else {
       setCat(-1)
@@ -91,6 +91,7 @@ function Gallery(props) {
         color2={vars.GRADIENT_COLOR2}
         height={height}
         onScroll={onScroll}>
+
 
         <NavTabs
           items={cats}

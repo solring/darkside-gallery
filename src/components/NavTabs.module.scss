@@ -4,8 +4,7 @@
   position: sticky;
   top:0;
   z-index: 1050;
-
-  transition: padding .2s linear;
+  padding-top: 24px;
 }
 
 .inner {
@@ -14,9 +13,13 @@
 }
 
 .item {
-  text-transform: capitalize;
   display: inline-block;
-  padding: .5rem 2rem;
+  padding: .2rem 2rem;
+  margin: 0 .5rem;
+
+  border-radius: 4px;
+
+  text-transform: capitalize;
   color: rgba(255, 255, 255, 0.5);
 
   &:hover {
@@ -31,6 +34,7 @@
 .markerWrap {
   height: 24px;
   position: relative;
+  margin-bottom: -2px;
 }
 
 .marker {

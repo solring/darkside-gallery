@@ -1,5 +1,5 @@
-export const GRADIENT_COLOR1 = "#4466aa";
-export const GRADIENT_COLOR2 = "#ee55aa";
+export const GRADIENT_COLOR1 = "#7853BC";
+export const GRADIENT_COLOR2 = "#EE786F";
 
 export const BS_BREAKPOINT_SM = "576px";
 export const BS_BREAKPOINT_MD = "768px";

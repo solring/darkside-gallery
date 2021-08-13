@@ -6,17 +6,18 @@ import styles from './Tag.module.scss'
 function Tag(props) {
   const { active, onClick } = props
   return (
-    <button
+    <a
       className={`
         btn
+        hvr-underline-from-center
         ${styles['base']}
-        ${active ? styles['active']: ""}
+        ${active ? "active": ""}
         ${props.className}
       `}
       onClick={onClick}
     >
       {props.children}
-    </button>
+    </a>
   )
 }
 

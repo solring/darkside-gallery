@@ -1,10 +1,11 @@
- // Helper functions
  function RGBtoHex(color) {
-  const [r, g, b] = color
-  const rr = r.toString(16)
-  const gg = g.toString(16)
-  const bb = b.toString(16)
-  return `#${rr}${gg}${bb}`
+  let cc = color.map((c) => {
+    let str = c.toString(16)
+    if(str.length < 2) str = '0' + str
+    return str
+  })
+
+  return `#${cc[0]}${cc[1]}${cc[2]}`
 }
 
 function hexToRGB(color) {

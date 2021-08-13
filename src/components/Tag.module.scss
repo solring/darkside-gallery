@@ -13,9 +13,10 @@
   &:hover {
     color: darken($primary, 20%);
   }
-}
 
-.active {
-  border-color: $primary;
-  border-width: 0 2px 0 2px;
+  // override hover effect
+  &:before, &:after {
+    background: $primary;
+    height: 1px;
+  }
 }

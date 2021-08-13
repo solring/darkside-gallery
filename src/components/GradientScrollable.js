@@ -5,10 +5,10 @@ import useScrollThrottle from '../hooks/useScrollThrottle'
 import { RGBtoHex, hexToRGB } from '../utils/colorUtils'
 
 function GradientScrollable({color1, color2, height, onScroll, ...props}) {
-  const DELAY = 50
+  const THROTTLE = 100
 
   const ref = useRef()
-  const [x, pos] = useScrollThrottle(ref, DELAY)
+  const [x, pos] = useScrollThrottle(ref, THROTTLE)
 
   const _color1 = hexToRGB(color1)
   const _color2 = hexToRGB(color2)

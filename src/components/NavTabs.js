@@ -20,28 +20,32 @@ function NavTabs(props) {
 
   const tags = (selected >= 0 && selected < items.length) ?
                 items[selected].tags : []
-
   const toggle = tags && tags.length > 0;
 
-  const pt = {
-    paddingTop: `${48 - Math.min(scrollPos, 24)}px`
-  }
+  // styles
+  const PADDING_TOP = 48
+  const opacity = Math.max( (Math.min(scrollPos, PADDING_TOP)/PADDING_TOP).toFixed(2) - 0.2 , 0)
 
-  const opacity = Math.max( (Math.min(scrollPos, 48)/48).toFixed(2) - 0.2 , 0)
   const bg = {
-    background: `linear-gradient(${hexToRGBAStr(GRADIENT_COLOR1, opacity)}, ${hexToRGBAStr(GRADIENT_COLOR2, opacity)})`
+    background: `linear-gradient(${hexToRGBAStr(GRADIENT_COLOR1, opacity)}, ${hexToRGBAStr(GRADIENT_COLOR2, opacity)})`,
   }
 
   return (
     <nav className={styles.navtabs} style={bg}>
 
-      <ul role="tablist" className={styles.inner} style={pt}>
+      <ul role="tablist" className={styles.inner}>
         {items.map((item, idx) => (
           <li key={idx} role="tab" className="d-inline-block">
-            <a className={styles.item}
+
+            <a className={`
+              hvr-underline-from-center
+              ${styles.item}
+              ${selected === idx ? "active" : ""}
+            `}
               onClick={() => onSelect(idx)}>
               {item.title}
             </a>
+
             <div className={styles.markerWrap}>
               <div className={`
                 text-center
@@ -51,10 +55,10 @@ function NavTabs(props) {
                 {trangle}
               </div>
             </div>
+
           </li>
         ))}
       </ul>
-
       <Collapse in={toggle} role="tabpanel" className="bg-light">
         <div>{/* Empty div is essential */}
 

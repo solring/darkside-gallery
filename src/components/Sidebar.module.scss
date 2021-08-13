@@ -5,12 +5,15 @@
   padding-left: 24px;
   padding-right: 24px;
 
-  background-color: #fff;
   height: 100%;
 
   text-align: left;
+  background-color: #fff;
 
-  box-shadow: 5px 0 7px 0 rgba(0,0,0,0.5);
+  // for shadow
+  position: relative;
+  z-index: 1060;
+  box-shadow: 5px 0 10px 2px rgba(0,0,0,0.3);
 
   @media screen and (max-width: $bs-breakpoint-md){
     display: flex;
