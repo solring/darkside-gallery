@@ -1,9 +1,8 @@
 # Introduction
 
-This is a template app created using Create-react-app with Storybook and SCSS enabled.
+My personal gallery.
 
-It also includes bootstrap as default styling framework.
-
+Created by create-react-app.
 
 # Scripts
 
@@ -57,7 +56,6 @@ import './style.scss';
 However, for Storybook, the [default preset for scss](https://storybook.js.org/docs/react/addons/install-addons#using-preset-addons) will install the latest **style-loader/css-loader/scss-loader** depending on webpack 5, which is not supported by current Storybook(although it has [beta support](https://gist.github.com/shilman/8856ea1786dcd247139b47b270912324) now) and Create-react-app. Therefore, after installing the preset, those loaders have to be downgraded to webpack-4-compatible versions manually.
 
 ``` json
-    // the latest versions that are compatible with webpack 4
     "style-loader": "^2.0.0",
     "css-loader": "^5.2.7",
     "sass-loader": "10.1.1"
