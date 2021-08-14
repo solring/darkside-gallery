@@ -1,12 +1,13 @@
+import { API_ROOT } from '../config'
 /**
  * Endpoints
  */
-export const API_FETCH_ARTICLES = "/api/article/";
-export const GetArticles = ({category, startIdx, length}) => ({
-  endpoint: `/api/article/${category}`,
+export const API_FETCH_ARTICLES = `${API_ROOT}/api/article/`;
+export const GetArticles = ({category, start, length}) => ({
+  endpoint: `${API_ROOT}/api/article/${category}`,
   method: 'post',
   json: {
-    start: startIdx,
+    start: start,
     length: length,
   }
 })
@@ -34,7 +35,6 @@ async function callApi(endpoint, method, json, {...customConfigs}) {
   let data;
   try {
     // mimic delay
-    //await new Promise((resolve) => setTimeout(resolve, 1000));
     const response = await window.fetch(endpoint, config);
     data = await response.json();
     if (response.ok) {

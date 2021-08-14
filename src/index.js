@@ -14,7 +14,7 @@ import { Provider } from 'react-redux'
 import configureAppStore from './store'
 const store = configureAppStore()
 
-mockServer()
+//mockServer()
 
 ReactDOM.render(
   <React.StrictMode>

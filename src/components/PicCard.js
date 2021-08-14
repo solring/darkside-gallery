@@ -26,7 +26,7 @@ function PicCard(props) {
               <p className={styles.subtitle}>{desc}</p>
               <div className="text-wrap">
                 {tags && tags.map((t, i) => (
-                  <small key={i} className="me-1">{t}</small>
+                  <small key={i} className="me-1">#{t}</small>
                 ))}
               </div>
             </div>

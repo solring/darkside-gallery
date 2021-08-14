@@ -12,23 +12,24 @@ export const categories = [
   {
     title: "fan-art",
     tags: [
-      "JJK",
-      "MOR",
-      "GK",
-      "WHA",
-      "DVD",
-      "others"
+      "Jujutsu kaisen",
+      "Mozart l'opera rock",
+      "Golden Kamuy",
+      "Witch Hat Atelier",
+      "Bloodborne",
+      "Dark Souls",
+      "Others"
     ]
   },
   {
     title: "illustration",
   },
   {
-    title: "graphic design",
+    title: "design",
     tags: [
-      "book cover",
-      "posters",
-      "others"
+      "Banner",
+      "Poster",
+      "T-shirt"
     ]
   }
 ]

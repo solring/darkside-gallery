@@ -67,8 +67,8 @@ function NavTabs(props) {
             {tags && tags.map((t, idx) => (
               <Tag
                 className="me-3"
-                key={idx} active={selectedTags && selectedTags[idx]}
-                onClick={() => onTagSelect(idx)}
+                key={idx} active={selectedTags && selectedTags[t]}
+                onClick={() => onTagSelect(t, idx)}
               >
                 {`#${t}`}
               </Tag>
@@ -86,7 +86,7 @@ function NavTabs(props) {
 NavTabs.propTypes = {
   items: PropTypes.array.isRequired,
   selected: PropTypes.number.isRequired,
-  selectedTags: PropTypes.array.isRequired,
+  selectedTags: PropTypes.object.isRequired,
   onSelect: PropTypes.func,
   onTagSelect: PropTypes.func,
   scollPos: PropTypes.number,

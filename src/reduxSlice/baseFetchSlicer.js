@@ -12,6 +12,7 @@ export default (feature) => {
 
   return ({
     createFetchApi: (req) => createAsyncThunk(path, async args => {
+      console.log("fetch articles:");
       const json = await api(req(args));
       return json;
     }),
