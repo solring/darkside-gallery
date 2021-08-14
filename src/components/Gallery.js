@@ -83,7 +83,6 @@ function Gallery(props) {
     setScroll([x, y])
   }
 
-
   return (
     <div className="vh-100" >
       <GradientScrollable

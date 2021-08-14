@@ -15,5 +15,5 @@ export default {
 const Template = (args) => <PicCard {...args} />;
 export const Default = Template.bind({});
 Default.args = {
-  ...mockItem
+  data: mockItem
 }

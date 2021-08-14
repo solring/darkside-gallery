@@ -2,7 +2,9 @@ import Gallery from "./Gallery"
 import { Provider } from "react-redux"
 import configureAppStore from '../store'
 
-const store = configureAppStore()
+// mock data
+import { mockState } from '../utils/mockdata'
+const store = configureAppStore(mockState)
 
 const decos = [
   (story) => <Provider store={store}>{story()}</Provider>

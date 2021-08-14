@@ -1,8 +1,9 @@
-import React, { useMemo, useRef, useEffect } from 'react'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useMedia, useIntersection } from 'react-use'
 
 import PicCard from './PicCard'
+import PicModal from './PicModal'
 
 import {BS_BREAKPOINT_SM, BS_BREAKPOINT_MD, BS_BREAKPOINT_LG} from '../utils/constants'
 
@@ -47,14 +48,7 @@ function assignRows(items, rowNum) {
 function PicGrid(props) {
   const { items, onExausted } = props
 
-  const lastEle = useRef()
-  const intersection = useIntersection(lastEle, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 1,
-  })
-  const ratio = intersection ? intersection.intersectionRatio : 0;
-
+  // RWD
   const isPhone = useMedia(`(max-width: ${BS_BREAKPOINT_SM})`)
   const isTablet = useMedia(`(max-width: ${BS_BREAKPOINT_MD})`)
   const isScreen = useMedia(`(max-width: ${BS_BREAKPOINT_LG})`)
@@ -65,6 +59,24 @@ function PicGrid(props) {
 
   const rows = useMemo(() => assignRows(items, rowNum), [items, rowNum])
 
+  // modal control
+  const [on, setOn] = useState(false)
+  const [currPic, setCurrPic] = useState(null)
+
+  const onPicCardClick = (item) => {
+    setCurrPic(item)
+    setOn(true)
+  }
+
+  // intersection hook
+  const lastEle = useRef()
+  const intersection = useIntersection(lastEle, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1,
+  })
+  const ratio = intersection ? intersection.intersectionRatio : 0;
+
   // monitor intersection to load more pictures
   useEffect(() => {
     console.log(`ratio: ${ratio}`)
@@ -73,21 +85,30 @@ function PicGrid(props) {
     }
   }, [ratio])
 
+
   if(!items || items.length === 0) return <div></div>
 
   return (
-    <div className="row g-3 my-3 mx-sm-3">
-      {rows.map((row, i) => (
-        <div key={i} className="col" >
-          {row.map((item, j) => {
-            // if last element: register intersection observer
-            if (item === items[items.length-1]) {
-              return <div ref={lastEle}><PicCard className="mb-3" {...item} /></div>
-            }
-            return <PicCard className="mb-3" {...item} />
-          })}
-        </div>
-      ))}
+    <div>
+      <div className="row g-3 my-3 mx-sm-3">
+        {rows.map((row, i) => (
+          <div key={i} className="col" >
+            {row.map((item, j) => {
+              // if last element: register intersection observer
+              if (item === items[items.length-1]) {
+                return <div ref={lastEle}><PicCard className="mb-3" data={item} onClick={onPicCardClick}/></div>
+              }
+              return <PicCard className="mb-3" data={item} onClick={onPicCardClick}/>
+            })}
+          </div>
+        ))}
+      </div>
+
+      <PicModal
+      toggle={on}
+      onClose={() => setOn(false)}
+      data={currPic}
+      />
     </div>
   )
 }

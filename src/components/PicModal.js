@@ -17,29 +17,37 @@ function PicModal(props) {
     } else {
       return (
         <React.Fragment>
-        <img
-          src={data.img}
-          alt={data.title}
-        />
-        <div className={styles.textBlk}>
-          <h5>{data.title}</h5>
-          <p className="mb-1">{data.desc}</p>
-          <div className="text-wrap">
-            {data.tags && data.tags.map((t, i) => (
-              <small key={i} className="me-2">#{t}</small>
-            ))}
+          <div className={styles.container}>
+            <img
+              className={styles.pic}
+              src={data.img}
+              alt={data.title}
+            />
           </div>
-        </div>
+          <div className={styles.textBlk}>
+            <h5>{data.title}</h5>
+            <p className="mb-1">{data.desc}</p>
+            <div className="text-wrap">
+              {data.tags && data.tags.map((t, i) => (
+                <small key={i} className="me-2">#{t}</small>
+              ))}
+            </div>
+          </div>
         </React.Fragment>
       )
     }
   }
 
   return (
-    <Modal show={toggle} onHide={onClose}>
-      <Modal.Body className="p-0 overflow-hidden position-relative">
+    <Modal
+      show={toggle}
+      onHide={onClose}
+      centered
+      dialogClassName={styles.modalSize}
+    >
+      <a className={`position-relative`} onClick={onClose}>
         {renderContent()}
-      </Modal.Body>
+      </a>
     </Modal>
   )
 }
