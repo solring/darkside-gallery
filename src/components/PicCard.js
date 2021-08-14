@@ -21,8 +21,8 @@ function PicCard(props) {
           <div className={`p-3 ${styles.text}`}>
             <h6>{title}</h6>
             <p className={styles.subtitle}>{desc}</p>
-            <div>
-              {tags.map((t, i) => (
+            <div className="text-wrap">
+              {tags && tags.map((t, i) => (
                 <small key={i} className="me-1">{t}</small>
               ))}
             </div>
@@ -37,7 +37,7 @@ function PicCard(props) {
 PicCard.propTypes = {
   img: PropTypes.string.isRequired,
   title: PropTypes.string,
-  dest: PropTypes.string,
+  desc: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
 }
 
