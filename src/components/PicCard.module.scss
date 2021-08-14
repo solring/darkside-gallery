@@ -6,7 +6,8 @@
   overflow: hidden;
 
   img {
-    @include img-cover;
+    width: 100%;
+    min-height: 100px;
     z-index: 1001;
   }
 }

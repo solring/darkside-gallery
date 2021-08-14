@@ -6,15 +6,11 @@ import { Reveal } from 'react-reveal'
 import styles from './PicCard.module.scss'
 
 function PicCard(props) {
-  const {img, height, title, desc, tags} = props
-
-  const style={
-    height: `${height}px`,
-  }
+  const {img, title, desc, tags} = props
 
   return (
     <Reveal effect="fadeInUp" duration={1000}>
-      <article className={`${styles.card} ${props.className}`} style={style}>
+      <article className={`${styles.card} ${props.className}`}>
 
         <img
           src={img}
@@ -40,7 +36,6 @@ function PicCard(props) {
 
 PicCard.propTypes = {
   img: PropTypes.string.isRequired,
-  height: PropTypes.number.isRequired,
   title: PropTypes.string,
   dest: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
