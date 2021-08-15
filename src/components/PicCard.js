@@ -12,7 +12,7 @@ function PicCard(props) {
 
   return (
     <Reveal effect="fadeInUp" duration={1000}>
-      <a onClick={() => onClick(data)}>
+      <a className="d-block" onClick={() => onClick(data)}>
         <article className={`${styles.card} ${props.className}`}>
 
           <img
