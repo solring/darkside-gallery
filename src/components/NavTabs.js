@@ -88,7 +88,7 @@ function NavTabs(props) {
 NavTabs.propTypes = {
   items: PropTypes.array.isRequired,
   selected: PropTypes.number.isRequired,
-  selectedTags: PropTypes.object.isRequired,
+  selectedTags: PropTypes.object,
   onSelect: PropTypes.func,
   onTagSelect: PropTypes.func,
   scollPos: PropTypes.number,

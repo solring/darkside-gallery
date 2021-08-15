@@ -1,6 +1,6 @@
 import NavTabs from "./NavTabs"
 
-import { categories } from "../utils/constants"
+import { mockCats as categories } from "../utils/mockdata"
 
 const decos = [
   (story) => <div className="p-4 bg-dark vh-100">{story()}</div>
@@ -31,5 +31,12 @@ export const SelectedTags = Template.bind({});
 SelectedTags.args = {
   items: categories,
   selected: 0,
-  selectedTags: [false, false, true, true, false, true],
+  selectedTags: {
+    "MOR" : false,
+    "JJK": false,
+    "DVD" : true,
+    "Golden Kamuy" : true,
+    "HP" : false,
+    "Others" : true
+  },
 }

@@ -8,6 +8,31 @@ export const mockItem = {
   tags: ["tag1", "tag2", "tag3"],
 }
 
+export const mockCats = [
+  {
+    title: "fan-art",
+    tags: [
+      "MOR",
+      "JJK",
+      "DVD",
+      "Golden Kamuy",
+      "HP",
+      "Others",
+    ]
+  },
+  {
+    title: "illustration"
+  },
+  {
+    title: "design",
+    tags: [
+      "Book cover",
+      "T-shirt",
+      "Poster",
+    ]
+  }
+]
+
 export const mockState = {
   article: {
     tags: [],

@@ -5,12 +5,14 @@ import { clear, fetchArticle } from '../reduxSlice/articleSlice'
 import { AJAX_STATUES_LOADING } from '../reduxSlice/fetchStatus'
 import api, { GetTags } from '../api/api'
 
-import { useAsync, useWindowSize } from 'react-use'
+import { useAsync, useWindowSize, useMedia } from 'react-use'
 
 import GradientScrollable from './GradientScrollable'
 import NavTabs from './NavTabs'
+import NavTabsFullscreen from './NavTabsFullscreen'
 import PicGrid from './PicGrid'
 import Loading from './Loading'
+import Icon from './Icon'
 
 import * as vars from '../utils/constants'
 
@@ -49,6 +51,8 @@ function Gallery(props) {
   const dispatch = useDispatch()
 
   const [scroll, setScroll] = useState([0, 0])
+  const [on, setOn] = useState(false)
+  const isPhone = useMedia(`(max-width: ${vars.BS_BREAKPOINT_MD})`)
 
   // selected category/tags
   const [cat, setCat] = useState(-1) // :int
@@ -140,7 +144,17 @@ function Gallery(props) {
         onScroll={onScroll}>
 
         { tagsLoading.loading ? <Loading />
-          : tagsLoading.error ? <p className="text-muted text-center py-4">Oops...failed to load tags.</p>
+          : tagsLoading.error ? <p className="text-light text-center py-4">Oops...failed to load tags.</p>
+          : isPhone ?
+            <NavTabsFullscreen
+              toggle={on}
+              items={cats}
+              selected={cat}
+              selectedTags={tags}
+              onSelect={onSelect}
+              onTagSelect={onTagSelect}
+              onClose={() => setOn(false)}
+            />
           :
             <NavTabs
               items={cats}
@@ -156,8 +170,18 @@ function Gallery(props) {
           items={filtered}
           onExausted={loadMoreArticles}
         />
+
         {status === AJAX_STATUES_LOADING &&
           <Loading />
+        }
+
+        { isPhone &&
+          <button
+            className="btn btn-primary btn-lg rounded-pill position-fixed end-0 top-0 m-3 lh-1"
+            style={{zIndex: 1010}}
+            onClick={() => setOn(true)}>
+            :
+          </button>
         }
       </GradientScrollable>
     </div>
