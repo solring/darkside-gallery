@@ -3,6 +3,8 @@ import { API_ROOT } from '../config'
  * Endpoints
  */
 export const API_FETCH_ARTICLES = `${API_ROOT}/api/article/`;
+
+
 export const GetArticles = ({category, start, length}) => ({
   endpoint: `${API_ROOT}/api/article/${category}`,
   method: 'post',
@@ -10,6 +12,10 @@ export const GetArticles = ({category, start, length}) => ({
     start: start,
     length: length,
   }
+})
+export const GetTags = ({category}) => ({
+  endpoint: `${API_ROOT}/api/tag/${category}`,
+  method: 'get',
 })
 
 /**

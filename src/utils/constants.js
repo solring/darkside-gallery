@@ -9,27 +9,7 @@ export const BS_BREAKPOINT_XL = "1200px";
 export const ARTICLE_BATCH_LEN = 10;
 
 export const categories = [
-  {
-    title: "fan-art",
-    tags: [
-      "Jujutsu kaisen",
-      "Mozart l'opera rock",
-      "Golden Kamuy",
-      "Witch Hat Atelier",
-      "Bloodborne",
-      "Dark Souls",
-      "Others"
-    ]
-  },
-  {
-    title: "illustration",
-  },
-  {
-    title: "design",
-    tags: [
-      "Banner",
-      "Poster",
-      "T-shirt"
-    ]
-  }
+  "fan-art",
+  "illustration",
+  "design",
 ]

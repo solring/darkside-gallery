@@ -3,8 +3,9 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { clear, fetchArticle } from '../reduxSlice/articleSlice'
 import { AJAX_STATUES_LOADING } from '../reduxSlice/fetchStatus'
+import api, { GetTags } from '../api/api'
 
-import { useWindowSize } from 'react-use'
+import { useAsync, useWindowSize } from 'react-use'
 
 import GradientScrollable from './GradientScrollable'
 import NavTabs from './NavTabs'
@@ -40,12 +41,14 @@ function Gallery(props) {
 
   const {width, height} = useWindowSize();
 
+  /**
+   * Init and hooks
+   */
   // redux
   const {articles, tags:allTags, next, status} = useSelector(state => state.article)
   const dispatch = useDispatch()
 
   const [scroll, setScroll] = useState([0, 0])
-  const cats = vars.categories
 
   // selected category/tags
   const [cat, setCat] = useState(-1) // :int
@@ -53,6 +56,21 @@ function Gallery(props) {
 
   // filtered data
   const filtered = useMemo(() => filterArticle(articles, tags), [articles, tags])
+
+  // init: load tag list
+  const tagsLoading = useAsync(async () => {
+    let res = []
+    console.log("load tags...")
+    for (const category of vars.categories) {
+      const tags = await api(GetTags({category}))
+      res.push({
+        title: category,
+        tags: tags
+      })
+    }
+    return res
+  }, [])
+  const cats = tagsLoading.value
 
   // init
   useEffect(() => {
@@ -63,7 +81,9 @@ function Gallery(props) {
     }))
   }, [])
 
-  // helper functions
+  /**
+   * Helper functions
+   */
   const doLoadArticles = (start, category) => {
     dispatch(fetchArticle({
       start: start,
@@ -73,7 +93,9 @@ function Gallery(props) {
   }
 
 
-  // handlers
+  /**
+   * Handlers
+   */
   const loadMoreArticles = () => {
     doLoadArticles(next, cat === -1 ? "" : cats[cat].title)
   }
@@ -117,15 +139,18 @@ function Gallery(props) {
         height={height}
         onScroll={onScroll}>
 
-
-        <NavTabs
-          items={cats}
-          selected={cat}
-          selectedTags={tags}
-          onSelect={onSelect}
-          onTagSelect={onTagSelect}
-          scrollPos={scroll[1]}
-        />
+        { tagsLoading.loading ? <Loading />
+          : tagsLoading.error ? <p className="text-muted text-center py-4">Oops...failed to load tags.</p>
+          :
+            <NavTabs
+              items={cats}
+              selected={cat}
+              selectedTags={tags}
+              onSelect={onSelect}
+              onTagSelect={onTagSelect}
+              scrollPos={scroll[1]}
+            />
+        }
 
         <PicGrid
           items={filtered}

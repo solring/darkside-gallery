@@ -30,6 +30,8 @@ function NavTabs(props) {
     background: `linear-gradient(${hexToRGBAStr(GRADIENT_COLOR1, opacity)}, ${hexToRGBAStr(GRADIENT_COLOR2, opacity)})`,
   }
 
+  if (!items) return <div></div>
+
   return (
     <nav className={styles.navtabs} style={bg}>
 
