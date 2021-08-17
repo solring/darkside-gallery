@@ -1,21 +1,36 @@
 @import '../assets/style/configs/bootstrap/variables';
+@import '../assets/style/configs/variables';
+@import '../assets/style/gradient';
 
 .navtabs {
   position: sticky;
   top:0;
   z-index: 1050;
-  padding-top: 24px;
-}
+  padding-top: 32px;
 
-.inner {
-  display: flex;
-  justify-content: center;
+  transition: all .25s ease-in-out;
+
+  .item {
+    margin-bottom: 12px;
+  }
+
+  &[data-scroll=true] {
+    padding-top: 16px;
+    background-color: $gradient-color2;
+
+    .item {
+      margin-bottom: 8px;
+    }
+
+    .inner {
+      border-bottom: none;
+    }
+  }
 }
 
 .item {
   display: inline-block;
   padding: .2rem 2rem;
-  margin: 0 .5rem;
 
   border-radius: 4px;
 
@@ -27,28 +42,40 @@
   }
 }
 
-.markerSVG {
-  fill: white;
+.inner {
+  display: flex;
+  justify-content: center;
+
+  margin: 0 24px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all .25s ease-in-out;
+
+  &[data-open=true] {
+    border: none;
+  }
 }
 
-.markerWrap {
-  height: 24px;
-  position: relative;
-  margin-bottom: -2px;
-}
+.itemWrap {
 
-.marker {
-  position: absolute;
-  bottom: 0;
-  left: calc(50% - 16px);
+  &:after {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 
-  transition: height .35s linear;
-  transform-origin: bottom;
+    content: url(../assets/images/triangle.svg);
 
-  height: 0;
-  overflow: hidden;
+    transition: height .35s linear;
 
-  &.show {
-    height: 24px;
+    height: 0;
+    width: 32px;
+    overflow: hidden;
+  }
+
+  &[data-active=true] {
+    &:after {
+      height: 16px;
+    }
   }
 }

@@ -9,12 +9,6 @@ import { Collapse } from 'react-bootstrap'
 
 import Tag from './Tag'
 
-const trangle = (
-  <svg height="24" width="32" xmlns="http://www.w3.org/2000/svg">
-		<polygon points="16,0 0,24 32,24" className={styles.markerSVG}/>
-  </svg>
-)
-
 function NavTabs(props) {
   const { items, selected, selectedTags, onSelect, onTagSelect, scrollPos = 0 } = props
 
@@ -33,12 +27,15 @@ function NavTabs(props) {
   if (!items) return <div></div>
 
   return (
-    <nav className={styles.navtabs} style={bg}>
+    <nav className={styles.navtabs} data-scroll={scrollPos > 4}>
 
-      <ul role="tablist" className={styles.inner}>
+      <ul role="tablist" className={styles.inner} data-open={toggle}>
         {items.map((item, idx) => (
-          <li key={idx} role="tab" className="d-inline-block">
-
+          <li
+            key={idx} role="tab"
+            className={`d-inline-block ${styles.itemWrap}`}
+            data-active={selected === idx}
+          >
             <a className={`
               hvr-underline-from-center
               ${styles.item}
@@ -47,17 +44,6 @@ function NavTabs(props) {
               onClick={() => onSelect(idx)}>
               {item.title}
             </a>
-
-            <div className={styles.markerWrap}>
-              <div className={`
-                text-center
-                ${styles.marker}
-                ${selected === idx && toggle ? styles.show : ""}
-              `}>
-                {trangle}
-              </div>
-            </div>
-
           </li>
         ))}
       </ul>

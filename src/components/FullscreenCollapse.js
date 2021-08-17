@@ -1,15 +1,21 @@
+import { useRef } from 'react';
 import PropTypes from 'prop-types';
+
 import { Collapse } from 'react-bootstrap';
+import { useClickAway } from 'react-use'
 
 import styles from './FullscreenCollapse.module.scss'
 
 function FullScreenCollapse (props) {
   const { toggle, onClose, title, footer} = props;
 
+  const ref = useRef(null)
+  useClickAway(ref, () => onClose())
+
   return(
     <Collapse in={toggle} className={styles.collapse} data-testid="fs-collapse">
       <div> {/* Essential for Collapse to animate smoothly.*/}
-      <div className={styles.wrapper}>
+      <div ref={ref} className={styles.wrapper}>
 
         <div className={`${styles.header} bg-light`}>
           <div>{title}</div>

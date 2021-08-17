@@ -4,6 +4,7 @@
 
 // Theme Color
 $primary:                       #5753BD;
+$secondary:                     #EE786F;
 $light:                         #FFFFFF;
 $info:                          #F1F0F8;
 
@@ -40,3 +41,8 @@ $navbar-dark-color:             #fff;
 
 // Animation
 $transition-collapse:         height .4s ease !default;
+
+// Accordion
+$accordion-border-radius:       0;
+$accordion-button-active-bg:    $primary;
+$accordion-button-active-color: white;

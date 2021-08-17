@@ -1,14 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { hexToRGBAStr } from '../utils/colorUtils'
-import { GRADIENT_COLOR1, GRADIENT_COLOR2 } from '../utils/constants'
-
-import styles from './NavTabs.module.scss'
 import { Accordion } from 'react-bootstrap'
 import FullScreenCollapse from './FullscreenCollapse'
-
+import Icon from './Icon'
 import Tag from './Tag'
+
+import styles from './NavTabsFullscreen.module.scss'
 
 function NavTabsFullscreen(props) {
   const { toggle, items, selected, selectedTags, onSelect, onTagSelect, onClose } = props
@@ -23,28 +21,35 @@ function NavTabsFullscreen(props) {
     <FullScreenCollapse
       toggle={toggle}
       onClose={onClose}
-      title="Categories"
+      title={
+        <span className="text-uppercase">
+          <Icon name="filter_list" className="align-middle me-2"/>
+          Filter
+        </span>
+      }
     >
-      <Accordion>
-        { items.map((item, idx) => (
-          <Accordion.Item key={idx} eventKey={idx}>
-            <Accordion.Header onClick={() => onSelect(idx)}>
-              {item.title}
-            </Accordion.Header>
-            <Accordion.Body className="text-center" >
-              {tags && tags.map((t, idx) => (
-                <Tag
-                  className="my-2"
-                  key={idx} active={selectedTags && selectedTags[t]}
-                  onClick={() => onTagSelect(t, idx)}
-                >
-                  {`#${t}`}
-                </Tag>
-              ))}
-            </Accordion.Body>
-          </Accordion.Item>
-        )) }
-      </Accordion>
+      <div className={styles.wrapper}>
+        <Accordion>
+          { items.map((item, idx) => (
+            <Accordion.Item key={idx} eventKey={idx}>
+              <Accordion.Header onClick={() => onSelect(idx)}>
+                <h6 className="text-uppercase" >{item.title}</h6>
+              </Accordion.Header>
+              <Accordion.Body className="text-center" >
+                {tags && tags.map((t, idx) => (
+                  <Tag
+                    className="my-2"
+                    key={idx} active={selectedTags && selectedTags[t]}
+                    onClick={() => onTagSelect(t, idx)}
+                  >
+                    {`#${t}`}
+                  </Tag>
+                ))}
+              </Accordion.Body>
+            </Accordion.Item>
+          )) }
+        </Accordion>
+      </div>
 
     </FullScreenCollapse>
   )
