@@ -5,7 +5,7 @@ import { useMedia, useIntersection } from 'react-use'
 import PicCard from './PicCard'
 import PicModal from './PicModal'
 
-import {BS_BREAKPOINT_SM, BS_BREAKPOINT_MD, BS_BREAKPOINT_LG} from '../utils/constants'
+import {BS_BREAKPOINT_SM, BS_BREAKPOINT_LG, BS_BREAKPOINT_XL} from '../utils/constants'
 
 /**
  * assignRows:
@@ -50,8 +50,8 @@ function PicGrid(props) {
 
   // RWD
   const isPhone = useMedia(`(max-width: ${BS_BREAKPOINT_SM})`)
-  const isTablet = useMedia(`(max-width: ${BS_BREAKPOINT_MD})`)
-  const isScreen = useMedia(`(max-width: ${BS_BREAKPOINT_LG})`)
+  const isTablet = useMedia(`(max-width: ${BS_BREAKPOINT_LG})`)
+  const isScreen = useMedia(`(max-width: ${BS_BREAKPOINT_XL})`)
 
   const rowNum = isPhone ? 1
                   : isTablet ? 2
@@ -64,6 +64,8 @@ function PicGrid(props) {
   const [currPic, setCurrPic] = useState(null)
 
   const onPicCardClick = (item) => {
+    if(isPhone) return
+
     setCurrPic(item)
     setOn(true)
   }

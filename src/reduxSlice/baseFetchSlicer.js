@@ -7,7 +7,7 @@ import {
   AJAX_STATUES_FAILED
 } from './fetchStatus';
 
-export default (feature) => {
+export default function baseFetchSlicer(feature) {
   const path = `${feature}/fetch`;
 
   return ({

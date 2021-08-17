@@ -3,7 +3,7 @@ import * as data from './utils/mockdata';
 
 const tags = Array(7).fill(0).map((e, i) => `tag${i}`)
 
-export default function() {
+export default function mockServer() {
   return createServer({
     seeds(server) {
       server.db.loadData({

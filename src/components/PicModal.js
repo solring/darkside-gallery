@@ -45,9 +45,9 @@ function PicModal(props) {
       centered
       dialogClassName={styles.modalSize}
     >
-      <a className={`position-relative`} onClick={onClose}>
+      <button className={`position-relative`} onClick={onClose} aria-label="close">
         {renderContent()}
-      </a>
+      </button>
     </Modal>
   )
 }

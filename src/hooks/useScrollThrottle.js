@@ -31,9 +31,10 @@ export default function useScrollThrottle(ele = window, delay) {
   }
 
   useLayoutEffect(() => {
-    ele.current.addEventListener('scroll', onScroll)
+    const node = ele.current
+    node.addEventListener('scroll', onScroll)
     return () => {
-      ele.current.removeEventListener('scroll', onScroll)
+      node.removeEventListener('scroll', onScroll)
     }
   })
 

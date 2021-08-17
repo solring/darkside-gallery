@@ -15,7 +15,9 @@ function SocialNetworkBtns(props) {
       <ul className="position-absolute top-0 left-0">
         {socialMedia.map(([name, link], idx) => (
           <li key={idx} className="d-inline-block me-2">
-            <a className={styles.btn} href={link}></a>
+            <a className={styles.btn} href={link}>
+              <span className="visually-hidden">{name}</span>
+            </a>
           </li>
         ))}
       </ul>

@@ -12,7 +12,6 @@ import NavTabs from './NavTabs'
 import NavTabsFullscreen from './NavTabsFullscreen'
 import PicGrid from './PicGrid'
 import Loading from './Loading'
-import Icon from './Icon'
 
 import * as vars from '../utils/constants'
 
@@ -47,7 +46,7 @@ function Gallery(props) {
    * Init and hooks
    */
   // redux
-  const {articles, tags:allTags, next, status} = useSelector(state => state.article)
+  const {articles, next, status} = useSelector(state => state.article)
   const dispatch = useDispatch()
 
   const [scroll, setScroll] = useState([0, 0])
@@ -113,7 +112,7 @@ function Gallery(props) {
       setCat(idx)
       if (cats[idx].tags) {
         let obj = {}
-        cats[idx].tags.map((t) => { obj[t] = false })
+        cats[idx].tags.map((t) => { obj[t] = false; return 0 })
         setTags(obj)
       } else {
         setTags(null)
@@ -177,10 +176,13 @@ function Gallery(props) {
 
         { isPhone &&
           <button
-            className="btn btn-primary btn-lg rounded-pill position-fixed end-0 top-0 m-3 lh-1"
+            className="btn btn-primary btn-lg rounded-pill position-fixed end-0 top-0 m-3 lh-1 shadow-btn"
             style={{zIndex: 1010}}
-            onClick={() => setOn(true)}>
-            :
+            onClick={() => setOn(true)}
+          >
+            <span className="text-uppercase">
+              { cat === -1 ? ":" : `${cats[cat].title}`}
+            </span>
           </button>
         }
       </GradientScrollable>

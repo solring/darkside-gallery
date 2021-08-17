@@ -1,6 +1,5 @@
 import { Spinner } from 'react-bootstrap';
-
-export default () => (
+const Loading = () => (
   <div className="container text-center py-5">
     <Spinner
       className="opacity-75"
@@ -11,3 +10,4 @@ export default () => (
     </Spinner>
   </div>
 )
+export default Loading

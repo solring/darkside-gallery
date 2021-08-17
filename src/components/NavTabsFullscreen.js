@@ -16,7 +16,6 @@ function NavTabsFullscreen(props) {
 
   if (!items) return <div></div>
 
-  const idx = 1
   return (
     <FullScreenCollapse
       toggle={toggle}
@@ -28,7 +27,7 @@ function NavTabsFullscreen(props) {
         </span>
       }
     >
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper + " shadow-down"}>
         <Accordion>
           { items.map((item, idx) => (
             <Accordion.Item key={idx} eventKey={idx}>
