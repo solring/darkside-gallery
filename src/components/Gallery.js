@@ -157,6 +157,7 @@ function Gallery(props) {
         }
 
         <PicGrid
+          className={isPhone ? "mt-5" : ""}
           items={filtered}
           onExhausted={loadMoreArticles}
         />
@@ -167,7 +168,7 @@ function Gallery(props) {
 
         { isPhone &&
           <button
-            className="btn btn-primary btn-lg rounded-pill position-fixed end-0 top-0 m-3 lh-1 shadow-btn"
+            className="btn btn-primary btn-lg rounded-pill position-fixed end-0 top-0 me-3 mt-5 lh-1 shadow-btn"
             style={{zIndex: 1010}}
             onClick={() => setOn(true)}
           >

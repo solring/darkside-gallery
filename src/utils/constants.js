@@ -1,10 +1,10 @@
 export const GRADIENT_COLOR1 = "#7853BC";
-export const GRADIENT_COLOR2 = "#EE786F";
+export const GRADIENT_COLOR2 = "#f57a72";
 
-export const BS_BREAKPOINT_SM = "576px";
-export const BS_BREAKPOINT_MD = "768px";
-export const BS_BREAKPOINT_LG = "992px";
-export const BS_BREAKPOINT_XL = "1200px";
+export const BS_BREAKPOINT_SM = "575px";
+export const BS_BREAKPOINT_MD = "767px";
+export const BS_BREAKPOINT_LG = "991px";
+export const BS_BREAKPOINT_XL = "1199px";
 
 export const ARTICLE_BATCH_LEN = 10;
 

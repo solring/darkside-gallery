@@ -2,14 +2,14 @@
 // Other variables
 // ============================================
 $gradient-color1:       #7853BC;
-$gradient-color2:       #EE786F;
+$gradient-color2:       #f57a72;
 
-// Bootstrap breakpoints
-$bs-breakpoint-sm:        576px;
-$bs-breakpoint-md:        768px;
-$bs-breakpoint-lg:        992px;
-$bs-breakpoint-xl:        1200px;
-$bs-breakpoint-xxl:       1400px;
+// Bootstrap breakpoints - 1
+$bs-breakpoint-sm:        575px;
+$bs-breakpoint-md:        765px;
+$bs-breakpoint-lg:        991px;
+$bs-breakpoint-xl:        1199px;
+$bs-breakpoint-xxl:       1399px;
 
 // export to webpack
 :export {

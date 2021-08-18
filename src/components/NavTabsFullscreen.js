@@ -58,7 +58,7 @@ NavTabsFullscreen.propTypes = {
   toggle: PropTypes.bool.isRequired,
   items: PropTypes.array.isRequired,
   selected: PropTypes.number.isRequired,
-  selectedTags: PropTypes.object.isRequired,
+  selectedTags: PropTypes.object,
   onSelect: PropTypes.func,
   onTagSelect: PropTypes.func,
   onClose: PropTypes.func.isRequired,
