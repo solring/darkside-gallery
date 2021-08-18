@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react'
+import React, { useState, useMemo, useRef, useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useMedia, useIntersection } from 'react-use'
 
@@ -46,7 +46,7 @@ function assignRows(items, rowNum) {
 }
 
 function PicGrid(props) {
-  const { items, onExausted } = props
+  const { items, onExhausted } = props
 
   // RWD
   const isPhone = useMedia(`(max-width: ${BS_BREAKPOINT_SM})`)
@@ -80,12 +80,19 @@ function PicGrid(props) {
   const ratio = intersection ? intersection.intersectionRatio : 0;
 
   // monitor intersection to load more pictures
-  useEffect(() => {
-    console.log(`ratio: ${ratio}`)
+  useLayoutEffect(() => {
+    //console.log(`ratio: ${ratio}`)
     if (ratio === 1) {
-      if(onExausted) onExausted()
+      if(onExhausted) onExhausted()
     }
-  }, [ratio])
+  }, [ratio, items])
+
+  // monitor input empty
+  useLayoutEffect(() => {
+    if (items.length === 0) {
+      if(onExhausted) onExhausted()
+    }
+  }, [items])
 
 
   if(!items || items.length === 0) return <div></div>
@@ -98,9 +105,9 @@ function PicGrid(props) {
             {row.map((item, j) => {
               // if last element: register intersection observer
               if (item === items[items.length-1]) {
-                return <div ref={lastEle}><PicCard className="mb-3" data={item} onClick={onPicCardClick}/></div>
+                return <div key={j} ref={lastEle}><PicCard className="mb-3" data={item} onClick={onPicCardClick}/></div>
               }
-              return <PicCard className="mb-3" data={item} onClick={onPicCardClick}/>
+              return <PicCard key={j} className="mb-3" data={item} onClick={onPicCardClick}/>
             })}
           </div>
         ))}
@@ -117,7 +124,7 @@ function PicGrid(props) {
 
 PicGrid.propTypes = {
   items: PropTypes.array.isRequired,
-  onExausted: PropTypes.func,
+  onExhausted: PropTypes.func,
 }
 
 export default PicGrid

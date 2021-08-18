@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { clear, fetchArticle } from '../reduxSlice/articleSlice'
@@ -16,7 +16,8 @@ import Loading from './Loading'
 import * as vars from '../utils/constants'
 
 /**
- * Filter articles with selected tags
+ * Filter articles locally with selected tags.
+ * Should change to server-side filter with cache in the future.
  * @articles : list of article objects retrieved from server
  * @tags     : a dictionary(object) with true/false values,
  *             the names of tags(str) being the keys.
@@ -46,7 +47,7 @@ function Gallery(props) {
    * Init and hooks
    */
   // redux
-  const {articles, next, status} = useSelector(state => state.article)
+  const {articles, next, status, exhausted} = useSelector(state => state.article)
   const dispatch = useDispatch()
 
   const [scroll, setScroll] = useState([0, 0])
@@ -75,26 +76,18 @@ function Gallery(props) {
   }, [])
   const cats = tagsLoading.value
 
-  // init
-  useEffect(() => {
-    dispatch(fetchArticle({
-      start: 0,
-      category: "", // load all
-      length: vars.ARTICLE_BATCH_LEN,
-    }))
-  }, [])
-
   /**
    * Helper functions
    */
   const doLoadArticles = (start, category) => {
-    dispatch(fetchArticle({
-      start: start,
-      category: category,
-      length: vars.ARTICLE_BATCH_LEN,
-    }))
+    if (!exhausted) {
+      dispatch(fetchArticle({
+        start: start,
+        category: category,
+        length: vars.ARTICLE_BATCH_LEN,
+      }))
+    }
   }
-
 
   /**
    * Handlers
@@ -117,12 +110,10 @@ function Gallery(props) {
       } else {
         setTags(null)
       }
-      doLoadArticles(0, cats[idx].title)
     }
     else {
       setCat(-1)
       setTags(null)
-      doLoadArticles(0, "")
     }
   }
 
@@ -167,7 +158,7 @@ function Gallery(props) {
 
         <PicGrid
           items={filtered}
-          onExausted={loadMoreArticles}
+          onExhausted={loadMoreArticles}
         />
 
         {status === AJAX_STATUES_LOADING &&
