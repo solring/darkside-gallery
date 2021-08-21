@@ -10,14 +10,3 @@ $bs-breakpoint-md:        765px;
 $bs-breakpoint-lg:        991px;
 $bs-breakpoint-xl:        1199px;
 $bs-breakpoint-xxl:       1399px;
-
-// export to webpack
-:export {
-  gradientColor1: $gradient-color1;
-  gradientColor2: $gradient-color2;
-  bsBPsm: $bs-breakpoint-sm;
-  bsBPmd: $bs-breakpoint-md;
-  bsBPlg: $bs-breakpoint-lg;
-  bsBPxl: $bs-breakpoint-xl;
-  bsBPxxl: $bs-breakpoint-xxl;
-}

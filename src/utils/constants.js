@@ -1,10 +1,12 @@
-export const GRADIENT_COLOR1 = "#7853BC";
-export const GRADIENT_COLOR2 = "#f57a72";
+import vars from '../assets/style/configs/_variables.module.scss';
 
-export const BS_BREAKPOINT_SM = "575px";
-export const BS_BREAKPOINT_MD = "767px";
-export const BS_BREAKPOINT_LG = "991px";
-export const BS_BREAKPOINT_XL = "1199px";
+export const GRADIENT_COLOR1 = vars.gradientColor1;
+export const GRADIENT_COLOR2 = vars.gradientColor2;
+
+export const BS_BREAKPOINT_SM = vars.bsBPsm;
+export const BS_BREAKPOINT_MD = vars.bsBPmd;
+export const BS_BREAKPOINT_LG = vars.bsBPlg;
+export const BS_BREAKPOINT_XL = vars.bsBPxl;
 
 export const ARTICLE_BATCH_LEN = 10;
 
@@ -12,4 +14,4 @@ export const categories = [
   "fan-art",
   "illustration",
   "design",
-]
+];
