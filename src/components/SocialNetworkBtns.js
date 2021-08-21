@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './SocialNetworkBtns.module.scss'
+import ThemeContext from '../context/ThemeContext'
 
 function SocialNetworkBtns(props) {
 
@@ -10,8 +11,10 @@ function SocialNetworkBtns(props) {
     ["tumblr", "https://sunburnt-goldfish.tumblr.com"],
   ]
 
+  const {suffix} = useContext(ThemeContext)
+
   return (
-    <nav className="position-relative icon-socialmedia">
+    <nav className={`position-relative icon-socialmedia bg-theme-gradient${suffix} theme-transition`}>
       <ul className="position-absolute top-0 left-0">
         {socialMedia.map(([name, link], idx) => (
           <li key={idx} className="d-inline-block me-2">

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useContext } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { clear, fetchArticle } from '../reduxSlice/articleSlice'
@@ -14,6 +14,7 @@ import PicGrid from './PicGrid'
 import Loading from './Loading'
 
 import * as vars from '../utils/constants'
+import ThemeContext from '../context/ThemeContext'
 
 /**
  * Filter articles locally with selected tags.
@@ -46,6 +47,9 @@ function Gallery(props) {
   /**
    * Init and hooks
    */
+  // theme
+  const {gradient1, gradient2} = useContext(ThemeContext)
+
   // redux
   const {articles, next, status, exhausted} = useSelector(state => state.article)
   const dispatch = useDispatch()
@@ -128,8 +132,8 @@ function Gallery(props) {
   return (
     <div className="vh-100" >
       <GradientScrollable
-        color1={vars.GRADIENT_COLOR1}
-        color2={vars.GRADIENT_COLOR2}
+        color1={gradient1}
+        color2={gradient2}
         height={height}
         onScroll={onScroll}>
 

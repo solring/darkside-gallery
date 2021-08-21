@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 
+import ThemeContext from '../context/ThemeContext'
 import styles from './NavTabs.module.scss'
 import { Collapse } from 'react-bootstrap'
 
@@ -13,10 +14,14 @@ function NavTabs(props) {
                 items[selected].tags : []
   const toggle = tags && tags.length > 0;
 
+  const {gradient2} = useContext(ThemeContext)
+  const scrolled = scrollPos > 4
+  const bg = scrolled ? { background: gradient2 } : {}
+
   if (!items) return <div></div>
 
   return (
-    <nav className={styles.navtabs} data-scroll={scrollPos > 4}>
+    <nav className={styles.navtabs} style={bg} data-scroll={scrolled}>
 
       <ul role="tablist" className={styles.inner} data-open={toggle}>
         {items.map((item, idx) => (

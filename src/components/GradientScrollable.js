@@ -37,7 +37,7 @@ function GradientScrollable({color1, color2, height, onScroll, ...props}) {
   }, [x, pos])
 
   return (
-    <div ref={ref} style={style} className={`${props.className}`}>
+    <div ref={ref} style={style} className={`${props.className} theme-transition`}>
       {props.children}
     </div>
   )

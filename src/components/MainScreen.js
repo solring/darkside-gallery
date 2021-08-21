@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Sidebar from './Sidebar'
 import Gallery from './Gallery'
 
+import Switch from './Switch'
+import ThemeContext, { themes } from '../context/ThemeContext'
+
 function MainScreen(props) {
 
+  const [dark, setDark] = useState(false)
+
   return (
-    <div className="row g-0">
-      <div className="col-md-3">
-        <Sidebar />
+    <ThemeContext.Provider value={dark ? themes.dark : themes.default}>
+      <div className="row g-0">
+        <div className="col-md-3">
+          <Sidebar footer={
+            <Switch
+              val={dark}
+              setVal={setDark}
+              style={{ zIndex: 1070 }}
+            />
+          }/>
+        </div>
+        <div className="col-md-9">
+          <Gallery />
+        </div>
       </div>
-      <div className="col-md-9">
-        <Gallery />
-      </div>
-    </div>
+    </ThemeContext.Provider>
   )
 }
 

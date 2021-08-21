@@ -1,7 +1,7 @@
 @import '../assets/style/configs/variables';
 
 .sidebar {
-  padding: 60px 24px;
+  padding: 60px 24px 24px 24px;
 
   height: 100%;
 
@@ -39,6 +39,10 @@
 
       box-shadow: inset 1px 1px 4px 0 gray;
     }
+  }
+
+  @media screen and (max-width: $bs-breakpoint-sm) {
+    padding-top: 24px;
   }
 }
 

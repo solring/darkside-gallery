@@ -53,3 +53,10 @@
   left: 0;
   right: 0;
 }
+
+/* Global transition */
+.theme-transition {
+  transition-property: all;
+  transition-duration: .35s;
+  transition-timing-function: ease-out;
+}

@@ -7,14 +7,14 @@ function GradientWord({color1, color2, ...props}) {
 
   const style = {
     display: "inline-block",
-    background: gradient(color1, color2),
+    backgroundImage: gradient(color1, color2),
     backgroundClip: "text",
-    WebkitBackgroundClip: "text",
+    webkitBackgroundClip: "text",
     color: "transparent",
   }
 
   return (
-    <div style={style}>
+    <div style={style} key={style} className="theme-transition">
       {props.children}
     </div>
   )
