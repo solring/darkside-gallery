@@ -1,8 +1,8 @@
-import { API_ROOT } from '../config'
 /**
  * Endpoints
  */
-export const API_FETCH_ARTICLES = `${API_ROOT}/api/article/`;
+const API_ROOT = process.env.REACT_APP_API_ROOT
+export const API_FETCH_ARTICLES = `${API_ROOT}/api/article/`
 
 
 export const GetArticles = ({category, start, length}) => ({
