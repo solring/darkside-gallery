@@ -17,13 +17,11 @@ function PicModal(props) {
     } else {
       return (
         <React.Fragment>
-          <div className={styles.container}>
+          <div className={styles.container + ' position-relative'}>
             <img
-              className={styles.pic}
               src={data.img}
               alt={data.title}
             />
-          </div>
           <div className={styles.textBlk}>
             <h5>{data.title}</h5>
             <p className="mb-1">{data.desc}</p>
@@ -32,6 +30,7 @@ function PicModal(props) {
                 <small key={i} className="me-2">#{t}</small>
               ))}
             </div>
+          </div>
           </div>
         </React.Fragment>
       )
@@ -45,7 +44,7 @@ function PicModal(props) {
       centered
       dialogClassName={styles.modalSize}
     >
-      <button className={`position-relative`} onClick={onClose} aria-label="close">
+      <button onClick={onClose} aria-label="close">
         {renderContent()}
       </button>
     </Modal>
