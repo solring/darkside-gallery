@@ -9,7 +9,7 @@ function GradientWord({color1, color2, ...props}) {
     display: "inline-block",
     backgroundImage: gradient(color1, color2),
     backgroundClip: "text",
-    webkitBackgroundClip: "text",
+    WebkitBackgroundClip: "text",
     color: "transparent",
   }
 

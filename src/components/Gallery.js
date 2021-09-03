@@ -172,8 +172,8 @@ function Gallery(props) {
 
         { isPhone &&
           <button
-            className="btn btn-primary btn-lg rounded-pill position-fixed end-0 top-0 me-3 mt-5 lh-1 shadow-btn"
-            style={{zIndex: 1010}}
+            className="btn btn-primary btn-lg rounded-pill border-0 position-fixed end-0 top-0 me-3 mt-5 lh-1 shadow-btn"
+            style={{zIndex: 1010, backgroundColor: gradient1}}
             onClick={() => setOn(true)}
           >
             <span className="text-uppercase">

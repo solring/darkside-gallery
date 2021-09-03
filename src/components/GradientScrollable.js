@@ -20,6 +20,7 @@ function GradientScrollable({color1, color2, height, onScroll, ...props}) {
   let offsetC2 = calcuColor(c1, c2, offset/100)
 
   let style = {
+    overflowX: "hidden",
     overflowY: "scroll",
     height: `${height}px`,
     background: `linear-gradient(${RGBtoHex(offsetC1)} 0%, ${RGBtoHex(c1)} ${offset}%, ${RGBtoHex(offsetC2)} 100%)`,
