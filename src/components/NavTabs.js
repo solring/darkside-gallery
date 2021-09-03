@@ -27,7 +27,7 @@ function NavTabs(props) {
         {items.map((item, idx) => (
           <li
             key={idx} role="tab"
-            className={`d-inline-block ${styles.itemWrap}`}
+            className={`d-inline-block me-3 ${styles.itemWrap}`}
             data-active={selected === idx}
           >
             <button className={`
