@@ -9,6 +9,11 @@
     width: 100%;
     min-height: 100px;
     z-index: 1001;
+
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none
   }
 }
 
