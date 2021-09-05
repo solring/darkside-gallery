@@ -12,12 +12,6 @@
   }
 }
 
-.btn:active {
-  .overlay {
-    opacity: 1;
-  }
-}
-
 .overlay {
   position: absolute;
   top: 0;
@@ -32,7 +26,15 @@
   transition: opacity 0.35s linear;
   opacity: 0;
 
-  &:hover {
+  // Prevent default :hover behavior in Safari/Chrome mobile browsers,
+  // which will also trigger :hover when tabbing items.
+  @media (hover: hover) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &[data-longpress=true] {
     opacity: 1;
   }
 }
