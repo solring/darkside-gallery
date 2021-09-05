@@ -130,7 +130,7 @@ function Gallery(props) {
   }
 
   return (
-    <div className="vh-100" >
+    <div className="vh-100 disable-select" >
       <GradientScrollable
         color1={gradient1}
         color2={gradient2}

@@ -167,3 +167,10 @@
         @include natureShadow;
     }
 }
+
+@mixin disable-select {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
