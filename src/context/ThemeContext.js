@@ -7,7 +7,7 @@ export const themes = {
     gradient1: vars.GRADIENT_COLOR1,
     gradient2: vars.GRADIENT_COLOR2,
     background: "#fff",
-    color: "#222",
+    color: "#555",
   },
   dark: {
     suffix: "-dark",

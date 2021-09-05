@@ -12,7 +12,7 @@ function FullScreenCollapse (props) {
   useClickAway(ref, (e) => {
     e.stopPropagation()
     onClose()
-  }, ['mousedown', 'mouseup', 'touchstart', 'touchend'])
+  }, ['mouseup', 'touchend'])
 
   return(
     <Collapse in={toggle} className={styles.collapse} data-testid="fs-collapse">
@@ -20,12 +20,14 @@ function FullScreenCollapse (props) {
       <div className={styles.wrapper}>
 
         <div ref={ref}>
-          <div className={`${styles.header} bg-light`}>
-            <div>{title}</div>
-            <button type="button" className="btn btn-link text-dark" onClick={onClose}>
-              <span className="material-icons icon-lg">close</span>
-            </button>
-          </div>
+          {title &&
+            <div className={`${styles.header} bg-light`}>
+              <div>{title}</div>
+              <button type="button" className="btn btn-link text-dark" onClick={onClose}>
+                <span className="material-icons icon-lg">close</span>
+              </button>
+            </div>
+          }
 
           <div className={styles.content}>
             {props.children}
