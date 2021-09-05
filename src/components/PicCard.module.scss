@@ -9,8 +9,6 @@
     width: 100%;
     min-height: 100px;
     z-index: 1001;
-
-    @include disable-select;
   }
 }
 
@@ -42,10 +40,6 @@
 }
 
 .text {
-  h1, h2, h3, h4, h5, h6, p, small {
-    @include disable-select;
-  }
-
   position: absolute;
   right: 0;
   bottom: 0;

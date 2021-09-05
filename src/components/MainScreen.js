@@ -6,13 +6,13 @@ import Gallery from './Gallery'
 import Switch from './Switch'
 import ThemeContext, { themes } from '../context/ThemeContext'
 
-function MainScreen(props) {
+function MainScreen() {
 
   const [dark, setDark] = useState(false)
 
   return (
     <ThemeContext.Provider value={dark ? themes.dark : themes.default}>
-      <div className="row g-0">
+      <div className="row g-0 disable-select">
         <div className="col-md-3">
           <Sidebar footer={
             <Switch
