@@ -65,16 +65,16 @@ function Sidebar(props) {
       </div>
       <div className="order-md-1">
         <GradientWord
+          className="font-title"
           color1={gradient1}
           color2={gradient2}
-        >
-          <h1 className={styles.title}>
-            Welcome to my<br/>
-            Rabit Hole.
-          </h1>
-        </GradientWord>
+          texts={["Welcome", "to my", "Rabbit Hole."]}
+          fz={42}
+          gap={4}
+          width={250}
+        />
 
-        <h5 className="text-muted">Personal Gallery of Solring.</h5>
+        <h5 className="text-muted mt-5">Personal Gallery of Solring.</h5>
         <CancelTouchWrapper className="mt-4 d-inline-block mb-3">
           <SocialNetworkBtns />
         </CancelTouchWrapper>

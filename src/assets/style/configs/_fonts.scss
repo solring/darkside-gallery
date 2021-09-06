@@ -3,3 +3,8 @@
 
 $title-font-family: 'Raleway', 'Helvetica', sans-serif;
 $content-font-family: 'Open Sans', 'Arial', sans-serif;
+
+.font-title {
+  font-weight: bold;
+  font-family: $title-font-family;
+}

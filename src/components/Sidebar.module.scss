@@ -47,23 +47,3 @@ $bottom-padding: 32px;
     padding-top: 8px;
   }
 }
-
-.title {
-  font-size: 48px;
-  overflow-wrap: break-word;
-
-  margin-bottom: 60px;
-
-  @media screen and (max-width: $bs-breakpoint-lg){
-    font-size: 32px;
-    margin-top: 32px;
-    margin-bottom: 32px;
-  }
-}
-
-.hiddenButton {
-  position: absolute;
-  bottom: 0;
-  height: $bottom-padding;
-  width: 100%;
-}
