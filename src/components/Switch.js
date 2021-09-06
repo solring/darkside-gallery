@@ -35,7 +35,10 @@ Switch.propTypes = {
   name: PropTypes.string,
   val: PropTypes.bool.isRequired,
   setVal: PropTypes.func.isRequired,
-  txt: PropTypes.string,
+  txt: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 }
 
 export default Switch

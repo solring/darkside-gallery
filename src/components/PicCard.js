@@ -14,7 +14,7 @@ function PicCard(props) {
 
   let longPress = useLongPress(ref)
 
-  const article = (
+  const Article = (
     <article ref={ref} className={`shadow-btn ${styles.card} ${props.className}`}>
 
       <img
@@ -41,16 +41,19 @@ function PicCard(props) {
     return (
       <Reveal effect="fadeInUp" duration={1000}>
         <button className={styles.btn + " d-block"} onClick={() => onClick(data)}>
-          {article}
+          {Article}
         </button>
       </Reveal>
     )
   } else {
+    return (
       <Reveal effect="fadeInUp" duration={1000}>
-        {article}
+        <div> {/* This div is to protect the ref of Article from being affected by Reveal. */}
+          {Article}
+        </div>
       </Reveal>
+    )
   }
-
 }
 
 PicCard.propTypes = {

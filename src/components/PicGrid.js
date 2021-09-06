@@ -64,8 +64,6 @@ function PicGrid(props) {
   const [currPic, setCurrPic] = useState(null)
 
   const onPicCardClick = (item) => {
-    if(isPhone) return
-
     setCurrPic(item)
     setOn(true)
   }
@@ -104,10 +102,11 @@ function PicGrid(props) {
           <div key={i} className="col" >
             {row.map((item, j) => {
               // if last element: register intersection observer
-              if (item === items[items.length-1]) {
-                return <div key={j} ref={lastEle}><PicCard className="mb-3" data={item} onClick={onPicCardClick}/></div>
-              }
-              return <PicCard key={j} className="mb-3" data={item} onClick={onPicCardClick}/>
+              return (
+                <div key={j} ref={item === items[items.length-1] ? lastEle : null}>
+                  <PicCard className="mb-3" data={item} onClick={isPhone ? null : onPicCardClick}/>
+                </div>
+              )
             })}
           </div>
         ))}

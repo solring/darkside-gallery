@@ -15,8 +15,8 @@ function GradientWord({color1, color2, texts, fz = 16, gap = 8, width = 200, ...
       </defs>
 
       <text x="0" y="0" className={props.className} fill="url(#themeGradient)">
-        {texts.map((t) => (
-          <tspan x="0" dy={fz+gap} fontSize={fz}>
+        {texts.map((t, i) => (
+          <tspan key={i} x="0" dy={fz+gap} fontSize={fz}>
             {t}
           </tspan>
         ))}
