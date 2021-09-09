@@ -8,7 +8,6 @@ function Tag(props) {
   return (
     <button
       className={`
-        btn
         hvr-underline-from-center
         ${styles['base']}
         ${active ? "active": ""}

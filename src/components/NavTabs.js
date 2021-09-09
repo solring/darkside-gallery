@@ -48,7 +48,7 @@ function NavTabs(props) {
           <div className="d-flex flex-wrap justify-content-center py-3">
             {tags && Array.isArray(tags) && tags.map((t, idx) => (
               <Tag
-                className="me-3"
+                className="me-3 mb-1"
                 key={idx} active={selectedTags && selectedTags[t]}
                 onClick={() => onTagSelect(t, idx)}
               >

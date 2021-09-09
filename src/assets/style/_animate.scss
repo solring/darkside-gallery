@@ -24,7 +24,7 @@
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:active:before {
   left: 0;
   right: 0;
 }
@@ -44,7 +44,7 @@
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.hvr-underline-from-center:hover:after, .hvr-underline-from-center:focus:after, .hvr-underline-from-center:active:after {
+.hvr-underline-from-center:hover:after, .hvr-underline-from-center:active:after {
   left: 0;
   right: 0;
 }
