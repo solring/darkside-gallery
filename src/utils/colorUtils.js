@@ -1,4 +1,6 @@
  function RGBtoHex(color) {
+  if (!Array.isArray(color) || color.length < 3) return ""
+
   let cc = color.map((c) => {
     let str = c.toString(16)
     if(str.length < 2) str = '0' + str

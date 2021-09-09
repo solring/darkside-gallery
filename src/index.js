@@ -7,14 +7,9 @@ import 'animate.css/animate.compat.css'
 
 import MainScreen from './components/MainScreen'
 
-// mock server
-import mockServer from './mockServer'
-
 import { Provider } from 'react-redux'
 import configureAppStore from './store'
 const store = configureAppStore()
-
-//mockServer()
 
 ReactDOM.render(
   <React.StrictMode>

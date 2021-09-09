@@ -96,7 +96,7 @@ function PicGrid(props) {
   if(!items || items.length === 0) return <div></div>
 
   return (
-    <div className={props.className}>
+    <div data-testid="picGrid" className={props.className}>
       <div className="row g-3 my-3 mx-sm-3">
         {rows.map((row, i) => (
           <div key={i} className="col" >

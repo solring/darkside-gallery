@@ -11,9 +11,6 @@ import styles from './NavTabsFullscreen.module.scss'
 function NavTabsFullscreen(props) {
   const { toggle, items, selected, selectedTags, onSelect, onTagSelect, onClose } = props
 
-  const tags = (selected >= 0 && selected < items.length) ?
-                items[selected].tags : []
-
   if (!items) return <div></div>
 
   return (
@@ -29,17 +26,17 @@ function NavTabsFullscreen(props) {
     >
       <div className={styles.wrapper + " shadow-down"}>
         <Accordion>
-          { items.map((item, idx) => (
-            <Accordion.Item key={idx} eventKey={idx}>
-              <Accordion.Header onClick={() => onSelect(idx)}>
+          { items.map((item, i) => (
+            <Accordion.Item key={i} eventKey={i}>
+              <Accordion.Header onClick={() => onSelect(i)}>
                 <h6 className="text-uppercase" >{item.title}</h6>
               </Accordion.Header>
               <Accordion.Body className="text-center" >
-                {tags && tags.map((t, idx) => (
+                {item.tags && Array.isArray(item.tags) && item.tags.map((t, j) => (
                   <Tag
                     className="my-2"
-                    key={idx} active={selectedTags && selectedTags[t]}
-                    onClick={() => onTagSelect(t, idx)}
+                    key={j} active={selectedTags && selectedTags[t]}
+                    onClick={() => onTagSelect(t, j)}
                   >
                     {`#${t}`}
                   </Tag>

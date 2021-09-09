@@ -46,7 +46,7 @@ function NavTabs(props) {
 
         <div className="container">
           <div className="d-flex flex-wrap justify-content-center py-3">
-            {tags && tags.map((t, idx) => (
+            {tags && Array.isArray(tags) && tags.map((t, idx) => (
               <Tag
                 className="me-3"
                 key={idx} active={selectedTags && selectedTags[t]}

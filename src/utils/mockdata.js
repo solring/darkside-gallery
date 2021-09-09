@@ -93,3 +93,11 @@ export const genItems = (len) =>{
     }
   })
 }
+
+export const genItemsStatic = (len) =>{
+  return Array(len).fill(0).map((e, i) => {
+    return {
+      ...mockItem,
+    }
+  })
+}

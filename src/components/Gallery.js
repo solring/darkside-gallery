@@ -107,7 +107,7 @@ function Gallery(props) {
 
     if(cat !== idx) { // if switch category
       setCat(idx)
-      if (cats[idx].tags) {
+      if (cats[idx].tags && Array.isArray(cats[idx].tags)) {
         let obj = {}
         cats[idx].tags.map((t) => { obj[t] = false; return 0 })
         setTags(obj)
@@ -139,25 +139,29 @@ function Gallery(props) {
 
         { tagsLoading.loading ? <Loading />
           : tagsLoading.error ? <p className="text-light text-center py-4">Oops...failed to load tags.</p>
-          : isPhone ?
-            <NavTabsFullscreen
-              toggle={on}
-              items={cats}
-              selected={cat}
-              selectedTags={tags}
-              onSelect={onSelect}
-              onTagSelect={onTagSelect}
-              onClose={() => setOn(false)}
-            />
-          :
-            <NavTabs
-              items={cats}
-              selected={cat}
-              selectedTags={tags}
-              onSelect={onSelect}
-              onTagSelect={onTagSelect}
-              scrollPos={scroll[1]}
-            />
+          : <div data-testid="navTabs">
+            {
+              isPhone ?
+              <NavTabsFullscreen
+                toggle={on}
+                items={cats}
+                selected={cat}
+                selectedTags={tags}
+                onSelect={onSelect}
+                onTagSelect={onTagSelect}
+                onClose={() => setOn(false)}
+              />
+            :
+              <NavTabs
+                items={cats}
+                selected={cat}
+                selectedTags={tags}
+                onSelect={onSelect}
+                onTagSelect={onTagSelect}
+                scrollPos={scroll[1]}
+              />
+            }
+            </div>
         }
 
         <PicGrid
