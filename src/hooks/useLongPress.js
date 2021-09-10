@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 export default function useLongPress(ref) {
   const LONG_PRESS_MS = 500
@@ -42,7 +42,7 @@ export default function useLongPress(ref) {
       ele.removeEventListener('touchend', upHandler)
       ele.removeEventListener('contextmenu', disableMenu)
     })
-  }, [ref.current])
+  }, [ref, ref.current])
 
   return longPress
 }

@@ -25,7 +25,7 @@ function CancelTouchWrapper(props) {
     return () => {
       ele.removeEventListener('touchend', cancel)
     }
-  }, [ref.current])
+  }, [])
 
   return (
     <div className={props.className} ref={ref}>
@@ -54,7 +54,7 @@ function Sidebar(props) {
     return () => {
       ele.removeEventListener('touchend', toggle)
     }
-  }, [ref.current])
+  }, [toggle])
 
   const Content = (
     <div className="h-100 d-flex flex-column justify-content-between pt-4">

@@ -9,7 +9,7 @@ import Tag from './Tag'
 import styles from './NavTabsFullscreen.module.scss'
 
 function NavTabsFullscreen(props) {
-  const { toggle, items, selected, selectedTags, onSelect, onTagSelect, onClose } = props
+  const { toggle, items, selectedTags, onSelect, onTagSelect, onClose } = props
 
   if (!items) return <div></div>
 

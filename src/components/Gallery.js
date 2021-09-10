@@ -42,7 +42,7 @@ function filterArticle(articles, tags) {
 
 function Gallery(props) {
 
-  const {width, height} = useWindowSize();
+  const {height} = useWindowSize();
 
   /**
    * Init and hooks

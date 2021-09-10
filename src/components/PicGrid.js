@@ -83,14 +83,14 @@ function PicGrid(props) {
     if (ratio === 1) {
       if(onExhausted) onExhausted()
     }
-  }, [ratio, items])
+  }, [onExhausted, ratio, items])
 
   // monitor input empty
   useLayoutEffect(() => {
     if (items.length === 0) {
       if(onExhausted) onExhausted()
     }
-  }, [items])
+  }, [onExhausted, items])
 
 
   if(!items || items.length === 0) return <div></div>
