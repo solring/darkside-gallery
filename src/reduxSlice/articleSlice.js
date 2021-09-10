@@ -24,7 +24,7 @@ export const articleslice = articleslicer.createFetchSlice(
     let articles = payload.data.list
     if (articles.length === 0) state.exhausted = true
 
-    if(state.next === payload.data.next) // redundant request
+    if(state.next >= payload.data.next) // redundant request
       return
 
     state.tags = payload.data.tags
