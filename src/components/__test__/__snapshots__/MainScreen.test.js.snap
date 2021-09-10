@@ -170,79 +170,76 @@ exports[`General tests: normal layout 1`] = `
         class="undefined theme-transition"
         style="overflow-x: hidden; overflow-y: scroll; height: 768px;"
       >
-        <div
+        <nav
+          class="navtabs"
+          data-scroll="false"
           data-testid="navTabs"
         >
-          <nav
-            class="navtabs"
-            data-scroll="false"
+          <ul
+            class="inner"
+            data-open="false"
+            role="tablist"
           >
-            <ul
-              class="inner"
-              data-open="false"
-              role="tablist"
+            <li
+              class="d-inline-block me-3 itemWrap"
+              data-active="false"
+              role="tab"
             >
-              <li
-                class="d-inline-block me-3 itemWrap"
-                data-active="false"
-                role="tab"
-              >
-                <button
-                  class="
+              <button
+                class="
               hvr-underline-from-center
               item
               
             "
-                >
-                  fan-art
-                </button>
-              </li>
-              <li
-                class="d-inline-block me-3 itemWrap"
-                data-active="false"
-                role="tab"
               >
-                <button
-                  class="
+                fan-art
+              </button>
+            </li>
+            <li
+              class="d-inline-block me-3 itemWrap"
+              data-active="false"
+              role="tab"
+            >
+              <button
+                class="
               hvr-underline-from-center
               item
               
             "
-                >
-                  illustration
-                </button>
-              </li>
-              <li
-                class="d-inline-block me-3 itemWrap"
-                data-active="false"
-                role="tab"
               >
-                <button
-                  class="
+                illustration
+              </button>
+            </li>
+            <li
+              class="d-inline-block me-3 itemWrap"
+              data-active="false"
+              role="tab"
+            >
+              <button
+                class="
               hvr-underline-from-center
               item
               
             "
-                >
-                  design
-                </button>
-              </li>
-            </ul>
+              >
+                design
+              </button>
+            </li>
+          </ul>
+          <div
+            aria-expanded="false"
+            class="bg-light collapse"
+            role="tabpanel"
+          >
             <div
-              aria-expanded="false"
-              class="bg-light collapse"
-              role="tabpanel"
+              class="container"
             >
               <div
-                class="container"
-              >
-                <div
-                  class="d-flex flex-wrap justify-content-center py-3"
-                />
-              </div>
+                class="d-flex flex-wrap justify-content-center py-3"
+              />
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
         <div
           class=""
           data-testid="picGrid"
@@ -988,229 +985,217 @@ exports[`General tests: phone layout 1`] = `
         style="overflow-x: hidden; overflow-y: scroll; height: 768px;"
       >
         <div
-          data-testid="navTabs"
+          class="collapse collapse"
+          data-testid="fs-collapse"
         >
+           
           <div
-            class="collapse collapse"
-            data-testid="fs-collapse"
+            class="wrapper"
           >
-             
-            <div
-              class="wrapper"
-            >
-              <div>
-                <div
-                  class="header bg-light"
-                >
-                  <div>
-                    <span
-                      class="text-uppercase"
-                    >
-                      <span
-                        class="material-icons icon md align-middle me-2"
-                      >
-                        filter_list
-                      </span>
-                      Filter
-                    </span>
-                  </div>
-                  <button
-                    class="btn btn-link text-dark"
-                    type="button"
+            <div>
+              <div
+                class="header bg-light"
+              >
+                <div>
+                  <span
+                    class="text-uppercase"
                   >
                     <span
-                      class="material-icons icon-lg"
+                      class="material-icons icon md align-middle me-2"
                     >
-                      close
+                      filter_list
                     </span>
-                  </button>
+                    Filter
+                  </span>
                 </div>
+                <button
+                  class="btn btn-link text-dark"
+                  type="button"
+                >
+                  <span
+                    class="material-icons icon-lg"
+                  >
+                    close
+                  </span>
+                </button>
+              </div>
+              <div
+                class="content"
+              >
                 <div
-                  class="content"
+                  class="wrapper shadow-down"
+                  data-testid="navTabs"
                 >
                   <div
-                    class="wrapper shadow-down"
+                    class="accordion"
                   >
                     <div
-                      class="accordion"
+                      class="accordion-item"
                     >
-                      <div
-                        class="accordion-item"
+                      <h2
+                        class="accordion-header"
                       >
-                        <h2
-                          class="accordion-header"
+                        <button
+                          aria-expanded="false"
+                          class="accordion-button collapsed"
+                          type="button"
+                        >
+                          <h6
+                            class="text-uppercase"
+                          >
+                            fan-art
+                          </h6>
+                        </button>
+                      </h2>
+                      <div
+                        class="accordion-collapse collapse"
+                      >
+                        <div
+                          class="text-center accordion-body"
                         >
                           <button
-                            aria-expanded="false"
-                            class="accordion-button collapsed"
-                            type="button"
+                            class="
+        hvr-underline-from-center
+        base
+        
+        my-2
+      "
                           >
-                            <h6
-                              class="text-uppercase"
-                            >
-                              fan-art
-                            </h6>
+                            #MOR
                           </button>
-                        </h2>
-                        <div
-                          class="accordion-collapse collapse"
-                        >
-                          <div
-                            class="text-center accordion-body"
+                          <button
+                            class="
+        hvr-underline-from-center
+        base
+        
+        my-2
+      "
                           >
-                            <button
-                              class="
-        btn
+                            #JJK
+                          </button>
+                          <button
+                            class="
         hvr-underline-from-center
         base
         
         my-2
       "
-                            >
-                              #MOR
-                            </button>
-                            <button
-                              class="
-        btn
+                          >
+                            #DVD
+                          </button>
+                          <button
+                            class="
         hvr-underline-from-center
         base
         
         my-2
       "
-                            >
-                              #JJK
-                            </button>
-                            <button
-                              class="
-        btn
+                          >
+                            #Golden Kamuy
+                          </button>
+                          <button
+                            class="
         hvr-underline-from-center
         base
         
         my-2
       "
-                            >
-                              #DVD
-                            </button>
-                            <button
-                              class="
-        btn
+                          >
+                            #HP
+                          </button>
+                          <button
+                            class="
         hvr-underline-from-center
         base
         
         my-2
       "
-                            >
-                              #Golden Kamuy
-                            </button>
-                            <button
-                              class="
-        btn
-        hvr-underline-from-center
-        base
-        
-        my-2
-      "
-                            >
-                              #HP
-                            </button>
-                            <button
-                              class="
-        btn
-        hvr-underline-from-center
-        base
-        
-        my-2
-      "
-                            >
-                              #Others
-                            </button>
-                          </div>
+                          >
+                            #Others
+                          </button>
                         </div>
                       </div>
-                      <div
-                        class="accordion-item"
+                    </div>
+                    <div
+                      class="accordion-item"
+                    >
+                      <h2
+                        class="accordion-header"
                       >
-                        <h2
-                          class="accordion-header"
+                        <button
+                          aria-expanded="false"
+                          class="accordion-button collapsed"
+                          type="button"
                         >
-                          <button
-                            aria-expanded="false"
-                            class="accordion-button collapsed"
-                            type="button"
+                          <h6
+                            class="text-uppercase"
                           >
-                            <h6
-                              class="text-uppercase"
-                            >
-                              illustration
-                            </h6>
-                          </button>
-                        </h2>
+                            illustration
+                          </h6>
+                        </button>
+                      </h2>
+                      <div
+                        class="accordion-collapse collapse"
+                      >
                         <div
-                          class="accordion-collapse collapse"
-                        >
-                          <div
-                            class="text-center accordion-body"
-                          />
-                        </div>
+                          class="text-center accordion-body"
+                        />
                       </div>
-                      <div
-                        class="accordion-item"
+                    </div>
+                    <div
+                      class="accordion-item"
+                    >
+                      <h2
+                        class="accordion-header"
                       >
-                        <h2
-                          class="accordion-header"
+                        <button
+                          aria-expanded="false"
+                          class="accordion-button collapsed"
+                          type="button"
+                        >
+                          <h6
+                            class="text-uppercase"
+                          >
+                            design
+                          </h6>
+                        </button>
+                      </h2>
+                      <div
+                        class="accordion-collapse collapse"
+                      >
+                        <div
+                          class="text-center accordion-body"
                         >
                           <button
-                            aria-expanded="false"
-                            class="accordion-button collapsed"
-                            type="button"
+                            class="
+        hvr-underline-from-center
+        base
+        
+        my-2
+      "
                           >
-                            <h6
-                              class="text-uppercase"
-                            >
-                              design
-                            </h6>
+                            #Book cover
                           </button>
-                        </h2>
-                        <div
-                          class="accordion-collapse collapse"
-                        >
-                          <div
-                            class="text-center accordion-body"
+                          <button
+                            class="
+        hvr-underline-from-center
+        base
+        
+        my-2
+      "
                           >
-                            <button
-                              class="
-        btn
+                            #T-shirt
+                          </button>
+                          <button
+                            class="
         hvr-underline-from-center
         base
         
         my-2
       "
-                            >
-                              #Book cover
-                            </button>
-                            <button
-                              class="
-        btn
-        hvr-underline-from-center
-        base
-        
-        my-2
-      "
-                            >
-                              #T-shirt
-                            </button>
-                            <button
-                              class="
-        btn
-        hvr-underline-from-center
-        base
-        
-        my-2
-      "
-                            >
-                              #Poster
-                            </button>
-                          </div>
+                          >
+                            #Poster
+                          </button>
                         </div>
                       </div>
                     </div>

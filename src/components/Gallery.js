@@ -139,29 +139,25 @@ function Gallery(props) {
 
         { tagsLoading.loading ? <Loading />
           : tagsLoading.error ? <p className="text-light text-center py-4">Oops...failed to load tags.</p>
-          : <div data-testid="navTabs">
-            {
-              isPhone ?
-              <NavTabsFullscreen
-                toggle={on}
-                items={cats}
-                selected={cat}
-                selectedTags={tags}
-                onSelect={onSelect}
-                onTagSelect={onTagSelect}
-                onClose={() => setOn(false)}
-              />
-            :
-              <NavTabs
-                items={cats}
-                selected={cat}
-                selectedTags={tags}
-                onSelect={onSelect}
-                onTagSelect={onTagSelect}
-                scrollPos={scroll[1]}
-              />
-            }
-            </div>
+          : isPhone ?
+            <NavTabsFullscreen
+              toggle={on}
+              items={cats}
+              selected={cat}
+              selectedTags={tags}
+              onSelect={onSelect}
+              onTagSelect={onTagSelect}
+              onClose={() => setOn(false)}
+            />
+          :
+            <NavTabs
+              items={cats}
+              selected={cat}
+              selectedTags={tags}
+              onSelect={onSelect}
+              onTagSelect={onTagSelect}
+              scrollPos={scroll[1]}
+            />
         }
 
         <PicGrid

@@ -24,7 +24,7 @@ function NavTabsFullscreen(props) {
         </span>
       }
     >
-      <div className={styles.wrapper + " shadow-down"}>
+      <div className={styles.wrapper + " shadow-down"} data-testid="navTabs">
         <Accordion>
           { items.map((item, i) => (
             <Accordion.Item key={i} eventKey={i}>

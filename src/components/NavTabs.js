@@ -21,7 +21,7 @@ function NavTabs(props) {
   if (!items) return <div></div>
 
   return (
-    <nav className={styles.navtabs} style={bg} data-scroll={scrolled}>
+    <nav className={styles.navtabs} style={bg} data-testid="navTabs" data-scroll={scrolled}>
 
       <ul role="tablist" className={styles.inner} data-open={toggle}>
         {items.map((item, idx) => (
