@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen, waitFor, fireEvent, getByRole, getAllByTestId, waitForElementToBeRemoved } from '@testing-library/react'
+import { render, screen, waitFor, fireEvent, getByRole, getAllByRole} from '@testing-library/react'
 
 import MainScreen from '../MainScreen'
 
@@ -32,28 +32,43 @@ it('General tests: phone layout', async () => {
   )
 
   // Wait for fetch to complete
-  await waitFor(() => screen.findByTestId('navTabs'), {timeout: 10000})
-  await waitFor(() => screen.findByTestId('picGrid'), {timeout: 10000})
+  const tabs = await screen.findByTestId('navTabs', {}, {timeout: 10000})
+  const grid = await screen.findByTestId('picGrid', {}, {timeout: 10000})
 
   // snapshot
   expect(container.firstChild).toMatchSnapshot()
 
+  // Check articles
+  const articles = grid.querySelectorAll('article')
+  let post = articles[0]
+
+  // 1. long press
+  fireEvent['touchStart'](post)
+
+  // 2. check overlay display
+  await waitFor(() => expect(grid.querySelector("[data-longpress='true']")).not.toBeNull(), {timeout: 5000})
+
+  // 3. end long press
+  fireEvent['touchEnd'](post)
+
   // Click tabs
-  const tabs = screen.getByTestId('navTabs')
   const tab1 = getByRole(tabs, 'button', {name: "fan-art"})
   const tab2 = getByRole(tabs, 'button', {name: "illustration"})
   const tab3 = getByRole(tabs, 'button', {name: "design"})
 
   expect(screen.getAllByRole('button', {name: /#.*?/})).toHaveLength(9)
 
+  const accordions = tabs.querySelectorAll(".accordion-collapse")
+
   fireEvent.click(tab1)
-  // TODO: check articles
+  await waitFor(() => expect(accordions[0]).toHaveClass('show'), {timeout: 3000})
 
   fireEvent.click(tab2)
-  // TODO: check articles
+  await waitFor(() => expect(accordions[1]).toHaveClass('show'), {timeout: 3000})
 
   fireEvent.click(tab3)
-  // TODO: check articles
+  await waitFor(() => expect(accordions[2]).toHaveClass('show'), {timeout: 3000})
+
 })
 
 it('General tests: normal layout', async () => {
@@ -75,14 +90,13 @@ it('General tests: normal layout', async () => {
   )
 
   // Wait for fetch to complete
-  await waitFor(() => screen.findByTestId('navTabs'), {timeout: 10000})
-  await waitFor(() => screen.findByTestId('picGrid'), {timeout: 10000})
+  const tabs = await screen.findByTestId('navTabs', {}, {timeout: 10000})
+  await screen.findByTestId('picGrid', {}, {timeout: 10000})
 
   // snapshot
   expect(container.firstChild).toMatchSnapshot()
 
   // Click tabs
-  const tabs = screen.getByTestId('navTabs')
   const tab1 = getByRole(tabs, 'button', {name: "fan-art"})
   const tab2 = getByRole(tabs, 'button', {name: "illustration"})
   const tab3 = getByRole(tabs, 'button', {name: "design"})
@@ -96,4 +110,17 @@ it('General tests: normal layout', async () => {
   fireEvent.click(tab3)
   expect(await screen.findByText(/Poster/)).toBeInTheDocument()
   expect(screen.getAllByRole('button', {name: /#.*?/})).toHaveLength(3)
+
+  // Check articles
+  // 1. wait for fetch again
+  const grid = await screen.findByTestId('picGrid', {}, {timeout: 10000})
+  const articles = getAllByRole(grid, 'button')
+
+  // 2. click
+  fireEvent.click(articles[0])
+  let ele = null
+  await waitFor(() => expect(ele = document.querySelector(".fade.modal.show")).not.toBeNull(), {timeout:3000})
+  await waitFor(() => expect(document.querySelector(".fade.modal-backdrop.show")).not.toBeNull(), {timeout:3000})
+  const close = getByRole(ele, 'button', {name: "close"})
+  fireEvent.click(close)
 })
