@@ -10,7 +10,7 @@ export const mockItem = {
 
 export const mockCats = [
   {
-    title: "fan-art",
+    category: "fan-art",
     tags: [
       "MOR",
       "JJK",
@@ -21,10 +21,10 @@ export const mockCats = [
     ]
   },
   {
-    title: "illustration"
+    category: "illustration"
   },
   {
-    title: "design",
+    category: "design",
     tags: [
       "Book cover",
       "T-shirt",

@@ -12,8 +12,8 @@ export const GetArticles = ({category, start, length}) => ({
     length: length,
   }
 })
-export const GetTags = ({category}) => ({
-  endpoint: `${API_ROOT}/api/tag/${category}`,
+export const GetCategories = () => ({
+  endpoint: `${API_ROOT}/api/category/all`,
   method: 'get',
 })
 

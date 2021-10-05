@@ -36,7 +36,7 @@ function NavTabs(props) {
               ${selected === idx ? "active" : ""}
             `}
               onClick={() => onSelect(idx)}>
-              {item.title}
+              {item.category}
             </button>
           </li>
         ))}

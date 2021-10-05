@@ -3,7 +3,7 @@ import React, { useState, useMemo, useContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { clear, fetchArticle } from '../reduxSlice/articleSlice'
 import { AJAX_STATUES_LOADING } from '../reduxSlice/fetchStatus'
-import api, { GetTags } from '../api/api'
+import api, { GetCategories } from '../api/api'
 
 import { useAsync, useWindowSize, useMedia } from 'react-use'
 
@@ -67,16 +67,8 @@ function Gallery(props) {
 
   // init: load tag list
   const tagsLoading = useAsync(async () => {
-    let res = []
     console.log("load tags...")
-    for (const category of vars.categories) {
-      const tags = await api(GetTags({category}))
-      res.push({
-        title: category,
-        tags: tags
-      })
-    }
-    return res
+    return await api(GetCategories())
   }, [])
   const cats = tagsLoading.value
 
@@ -97,7 +89,7 @@ function Gallery(props) {
    * Handlers
    */
   const loadMoreArticles = () => {
-    doLoadArticles(next, cat === -1 ? "" : cats[cat].title)
+    doLoadArticles(next, cat === -1 ? "" : cats[cat].category)
   }
 
   const onSelect = (idx) => {
@@ -177,7 +169,7 @@ function Gallery(props) {
             onClick={() => setOn(true)}
           >
             <span className="text-uppercase">
-              { cat === -1 ? ":" : `${cats[cat].title}`}
+              { cat === -1 ? ":" : `${cats[cat].category}`}
             </span>
           </button>
         }

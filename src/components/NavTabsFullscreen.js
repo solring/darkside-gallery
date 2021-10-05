@@ -29,7 +29,7 @@ function NavTabsFullscreen(props) {
           { items.map((item, i) => (
             <Accordion.Item key={i} eventKey={i}>
               <Accordion.Header onClick={() => onSelect(i)}>
-                <h6 className="text-uppercase" >{item.title}</h6>
+                <h6 className="text-uppercase" >{item.category}</h6>
               </Accordion.Header>
               <Accordion.Body className="text-center" >
                 {item.tags && Array.isArray(item.tags) && item.tags.map((t, j) => (

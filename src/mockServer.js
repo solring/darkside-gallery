@@ -2,7 +2,7 @@ import { createServer } from 'miragejs'
 import * as data from './utils/mockdata'
 
 const API_FETCH_ARTICLES = "/api/article/"
-const API_FETCH_TAGS = "/api/tag/"
+const API_FETCH_CATS = "/api/category/all"
 
 const tags = Array(7).fill(0).map((e, i) => `tag${i}`)
 
@@ -43,12 +43,9 @@ export default function mockServer() {
         }
       })
 
-      this.get( `${API_FETCH_TAGS}:category` , (schema, request) => {
-        const category = request.params.category
-        console.log(`GET TAGS: cate: ${category}`);
-
-        const cat = data.mockCats.find((item) => item.title === category)
-        return cat ? cat.tags : []
+      this.get( API_FETCH_CATS , (schema, request) => {
+        console.log(`GET CATS:`);
+        return data.mockCats;
       })
     }
   });
