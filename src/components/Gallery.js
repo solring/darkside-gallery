@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useContext } from 'react'
+import React, { useState, useMemo, useContext, useCallback } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { clear, fetchArticle } from '../reduxSlice/articleSlice'
@@ -75,7 +75,7 @@ function Gallery(props) {
   /**
    * Helper functions
    */
-  const doLoadArticles = (start, category) => {
+  const doLoadArticles = useCallback((start, category) => {
     if (!exhausted) {
       dispatch(fetchArticle({
         start: start,
@@ -83,14 +83,14 @@ function Gallery(props) {
         length: vars.ARTICLE_BATCH_LEN,
       }))
     }
-  }
+  }, [exhausted, dispatch])
 
   /**
    * Handlers
    */
-  const loadMoreArticles = () => {
+  const loadMoreArticles = useCallback(() => {
     doLoadArticles(next, cat === -1 ? "" : cats[cat].category)
-  }
+  }, [cat, cats, next, doLoadArticles])
 
   const onSelect = (idx) => {
 
@@ -117,9 +117,9 @@ function Gallery(props) {
     setTags({...tags, [t]: !tags[t]})
   }
 
-  const onScroll = (x, y) => {
+  const onScroll = useCallback((x, y) => {
     setScroll([x, y])
-  }
+  }, [setScroll])
 
   return (
     <div className="vh-100" >

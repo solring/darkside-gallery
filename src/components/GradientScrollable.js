@@ -35,7 +35,7 @@ function GradientScrollable({color1, color2, height, onScroll, ...props}) {
 
   useLayoutEffect(() => {
     if(onScroll) onScroll(x, pos)
-  }, [x, pos])
+  }, [x, pos, onScroll])
 
   return (
     <div ref={ref} style={style} className={`${props.className} theme-transition`}>

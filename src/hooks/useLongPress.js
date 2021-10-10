@@ -42,7 +42,8 @@ export default function useLongPress(ref) {
       ele.removeEventListener('touchend', upHandler)
       ele.removeEventListener('contextmenu', disableMenu)
     })
-  }, [ref, ref.current])
+    // eslint-disable-next-line
+  }, [ref.current])
 
   return longPress
 }
