@@ -168,9 +168,9 @@ function Gallery(props) {
             style={{zIndex: 1010, backgroundColor: gradient1}}
             onClick={() => setOn(true)}
           >
-            <span className="text-uppercase">
+            <h5 className="text-uppercase">
               { cat === -1 ? ":" : `${cats[cat].category}`}
-            </span>
+            </h5>
           </button>
         }
       </GradientScrollable>

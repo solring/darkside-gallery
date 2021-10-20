@@ -17,13 +17,13 @@ function PicModal(props) {
     } else {
       return (
         <React.Fragment>
-          <div className={styles.container + ' position-relative'}>
+          <article className={styles.container + ' position-relative'}>
             <img
               src={data.img}
               alt={data.title}
             />
           <div className={styles.textBlk}>
-            <h5>{data.title}</h5>
+            <h2 className="h3">{data.title}</h2>
             <p className="mb-1">{data.desc}</p>
             <div className="text-wrap">
               {data.tags && data.tags.map((t, i) => (
@@ -31,7 +31,7 @@ function PicModal(props) {
               ))}
             </div>
           </div>
-          </div>
+          </article>
         </React.Fragment>
       )
     }

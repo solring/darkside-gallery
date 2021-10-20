@@ -24,7 +24,7 @@ function PicCard(props) {
 
       <div className={styles.overlay} data-longpress={longPress}>
         <div className={`p-3 ${styles.text}`}>
-          <h6>{title}</h6>
+          <h4>{title}</h4>
           <p className={styles.subtitle}>{desc}</p>
           <div className="text-wrap">
             {tags && tags.map((t, i) => (

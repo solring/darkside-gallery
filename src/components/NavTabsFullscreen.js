@@ -18,7 +18,7 @@ function NavTabsFullscreen(props) {
       toggle={toggle}
       onClose={onClose}
       title={
-        <span className="text-uppercase">
+        <span className="text-uppercase h3">
           <Icon name="filter_list" className="align-middle me-2"/>
           Filter
         </span>
@@ -29,7 +29,7 @@ function NavTabsFullscreen(props) {
           { items.map((item, i) => (
             <Accordion.Item key={i} eventKey={i}>
               <Accordion.Header onClick={() => onSelect(i)}>
-                <h6 className="text-uppercase" >{item.category}</h6>
+                <h3 className="text-uppercase" >{item.category}</h3>
               </Accordion.Header>
               <Accordion.Body className="text-center" >
                 {item.tags && Array.isArray(item.tags) && item.tags.map((t, j) => (

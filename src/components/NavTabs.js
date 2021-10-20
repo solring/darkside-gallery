@@ -36,7 +36,7 @@ function NavTabs(props) {
               ${selected === idx ? "active" : ""}
             `}
               onClick={() => onSelect(idx)}>
-              {item.category}
+              <h3 className="h5">{item.category}</h3>
             </button>
           </li>
         ))}
