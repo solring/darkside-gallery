@@ -1,8 +1,21 @@
 # Introduction
 
-My personal gallery.
+My personal gallery built with create-react-app and [Storybook](https://storybook.js.org/).
 
-Created by create-react-app.
+Frontend currently [deployed on Heroku](https://darkside-gallery.herokuapp.com/) with independent [backend](https://github.com/solring/darkside-backend).
+
+## Third-party Libraries/Components
+
+- Datastore: Redux
+- React hook lib: [React-use](https://github.com/streamich/react-use)
+- Animation: [React-reveal]([react-reveal](https://www.react-reveal.com/))
+
+## Features
+
+- Infinite scrolling
+- Filter by tags
+- Night mode
+- RWD (Phone/PC screen)
 
 # Scripts
 
