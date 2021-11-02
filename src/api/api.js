@@ -2,18 +2,18 @@
  * Endpoints
  */
 const API_ROOT = process.env.REACT_APP_API_ROOT
-export const API_FETCH_ARTICLES = `${API_ROOT}/api/article/`
+export const API_FETCH_ARTICLES = `${API_ROOT}/api/articles/`
 
 export const GetArticles = ({category, start, length}) => ({
-  endpoint: `${API_ROOT}/api/article/${category}`,
-  method: 'post',
-  json: {
+  endpoint: `${API_ROOT}/api/articles/${category}`,
+  method: 'get',
+  query: {
     start: start,
     length: length,
   }
 })
 export const GetCategories = () => ({
-  endpoint: `${API_ROOT}/api/category/all`,
+  endpoint: `${API_ROOT}/api/categories/`,
   method: 'get',
 })
 
