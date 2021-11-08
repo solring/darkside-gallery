@@ -7,8 +7,8 @@ function SocialNetworkBtns(props) {
 
   const socialMedia = [
     ["github", "https://github.com/solring"],
-    ["twitter", "https://twitter.com/burntgoldfish"],
     ["tumblr", "https://sunburnt-goldfish.tumblr.com"],
+    ["twitter", "https://twitter.com/burntgoldfish"],
   ]
 
   const {suffix} = useContext(ThemeContext)
