@@ -4,6 +4,7 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 
   img {
     width: 100%;
