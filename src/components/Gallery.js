@@ -5,7 +5,9 @@ import { clear, fetchArticle } from '../reduxSlice/articleSlice'
 import { AJAX_STATUES_LOADING } from '../reduxSlice/fetchStatus'
 import api, { GetCategories } from '../api/api'
 
-import { useAsync, useWindowSize, useMedia } from 'react-use'
+import { useAsync, useMedia } from 'react-use'
+
+import useWindowSize from '../hooks/useWindowSize'
 
 import GradientScrollable from './GradientScrollable'
 import NavTabs from './NavTabs'
@@ -42,13 +44,14 @@ function filterArticle(articles, tags) {
 
 function Gallery(props) {
 
-  const {height} = useWindowSize();
-
   /**
    * Init and hooks
    */
   // theme
   const {gradient1, gradient2} = useContext(ThemeContext)
+  
+  // UI
+  const {height} = useWindowSize()
 
   // redux
   const {articles, next, status, exhausted} = useSelector(state => state.article)
@@ -122,7 +125,7 @@ function Gallery(props) {
   }, [setScroll])
 
   return (
-    <div className="vh-100" >
+    <div className="h-100" >
       <GradientScrollable
         color1={gradient1}
         color2={gradient2}

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useMedia } from 'react-use'
 
+import LayoutPhone from '../layout/LayoutPhone'
+import LayoutWide from '../layout/LayoutWide'
+
 import Sidebar from './Sidebar'
 import Gallery from './Gallery'
 import Switch from './Switch'
@@ -15,25 +18,28 @@ function MainScreen() {
 
   const isPhone = useMedia(`(max-width: ${vars.BS_BREAKPOINT_MD})`)
 
+  const Layout = isPhone ? LayoutPhone : LayoutWide
+  
+  const sidebar = (
+    <Sidebar fullscreen={isPhone} footer={
+      <Switch
+        val={dark}
+        setVal={setDark}
+        style={{ zIndex: 1070 }}
+        txt={
+          <Icon name="dark_mode" size="lg"/>
+        }
+      />
+    }/>
+  )
+
   return (
     <ThemeContext.Provider value={dark ? themes.dark : themes.default}>
-      <div className="row g-0 disable-select">
-        <div className="col-md-3">
-          <Sidebar fullscreen={isPhone} footer={
-            <Switch
-              val={dark}
-              setVal={setDark}
-              style={{ zIndex: 1070 }}
-              txt={
-                <Icon name="dark_mode" size="lg"/>
-              }
-            />
-          }/>
-        </div>
-        <div className="col-md-9">
-          <Gallery />
-        </div>
-      </div>
+      <Layout
+        header={sidebar}
+      >
+        <Gallery />
+      </Layout>
     </ThemeContext.Provider>
   )
 }
