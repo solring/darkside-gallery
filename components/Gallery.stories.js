@@ -1,6 +1,6 @@
 import Gallery from "./Gallery"
 import { Provider } from "react-redux"
-import configureAppStore from '../store'
+import configureAppStore from '../redux/store'
 
 // mock data
 import { mockState } from '../utils/mockdata'
