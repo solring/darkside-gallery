@@ -1,5 +1,5 @@
 import { createServer } from 'miragejs'
-import * as data from './utils/mockdata'
+import * as data from './mockdata'
 
 const API_FETCH_ARTICLES = "/api/article/"
 const API_FETCH_CATS = "/api/category/all"

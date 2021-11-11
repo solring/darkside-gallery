@@ -1,4 +1,4 @@
-import articleSlice from './reduxSlice/articleSlice'
+import articleSlice from './articleSlice'
 import { configureStore } from '@reduxjs/toolkit'
 
 export default function configureAppStore(preloadedState = {}) {

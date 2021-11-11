@@ -14,4 +14,4 @@ const mockMatchMedia = (query) => {
 }
 global.matchMedia = mockMatchMedia
 
-process.env.REACT_APP_API_ROOT = ""
+process.env.NEXT_PUBLIC_API_ROOT = ""

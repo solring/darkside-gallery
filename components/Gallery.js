@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useContext, useCallback } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { clear, fetchArticle } from '../reduxSlice/articleSlice'
-import { AJAX_STATUES_LOADING } from '../reduxSlice/fetchStatus'
+import { clear, fetchArticle } from '../redux/articleSlice'
+import { AJAX_STATUES_LOADING } from '../redux/fetchStatus'
 import api, { GetCategories } from '../api/api'
 
 import { useAsync, useMedia } from 'react-use'

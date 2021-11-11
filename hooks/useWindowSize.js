@@ -15,10 +15,13 @@ export default function useWindowSize() {
       width: width,
       height: height
     })
-    console.log(`handleResize: (${width}, ${height})`);
   }
 
   useEffect(() => {
+    if( typeof window === 'undefined') {
+      console.warn("useWindowEffect: cannot access window.");
+      return
+    }
     window.addEventListener('resize', handleResize)
     window.addEventListener('load', handleResize)
     return () => {
