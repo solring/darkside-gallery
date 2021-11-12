@@ -47,7 +47,7 @@ function GradientScrollable({color1, color2, gradientHeight, onScroll, ...props}
 GradientScrollable.propTypes = {
   color1: PropTypes.string.isRequired,
   color2: PropTypes.string.isRequired,
-  height: PropTypes.number.isRequired,
+  gradientHeight: PropTypes.number.isRequired,
   onScroll: PropTypes.func,
 }
 
