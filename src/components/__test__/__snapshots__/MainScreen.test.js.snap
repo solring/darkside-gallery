@@ -2,10 +2,10 @@
 
 exports[`General tests: normal layout 1`] = `
 <div
-  class="row g-0 disable-select"
+  class="row g-0 vh-100"
 >
   <div
-    class="col-md-3"
+    class="col-md-3 h-100"
   >
     <header
       class="sidebar theme-transition"
@@ -48,8 +48,13 @@ exports[`General tests: normal layout 1`] = `
         <div
           class="order-md-1"
         >
+          <h1
+            class="visually-hidden"
+          >
+            Welcome to My Rabbit Hole
+          </h1>
           <svg
-            viewBox="0 0 250 138"
+            viewBox="0 0 250 174"
             width="100%"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -75,33 +80,33 @@ exports[`General tests: normal layout 1`] = `
               y="0"
             >
               <tspan
-                dy="46"
-                font-size="42"
+                dy="58"
+                font-size="54"
                 x="0"
               >
                 Welcome
               </tspan>
               <tspan
-                dy="46"
-                font-size="42"
+                dy="58"
+                font-size="54"
                 x="0"
               >
                 to my
               </tspan>
               <tspan
-                dy="46"
-                font-size="42"
+                dy="58"
+                font-size="54"
                 x="0"
               >
                 Rabbit Hole.
               </tspan>
             </text>
           </svg>
-          <h5
-            class="text-muted mt-5"
+          <h2
+            class="h4 text-muted mt-5"
           >
             Personal Gallery of Solring.
-          </h5>
+          </h2>
           <div
             class="mt-4 d-inline-block mb-3"
           >
@@ -130,12 +135,12 @@ exports[`General tests: normal layout 1`] = `
                 >
                   <a
                     class="btn"
-                    href="https://twitter.com/burntgoldfish"
+                    href="https://sunburnt-goldfish.tumblr.com"
                   >
                     <span
                       class="visually-hidden"
                     >
-                      twitter
+                      tumblr
                     </span>
                   </a>
                 </li>
@@ -144,12 +149,12 @@ exports[`General tests: normal layout 1`] = `
                 >
                   <a
                     class="btn"
-                    href="https://sunburnt-goldfish.tumblr.com"
+                    href="https://twitter.com/burntgoldfish"
                   >
                     <span
                       class="visually-hidden"
                     >
-                      tumblr
+                      twitter
                     </span>
                   </a>
                 </li>
@@ -161,14 +166,14 @@ exports[`General tests: normal layout 1`] = `
     </header>
   </div>
   <div
-    class="col-md-9"
+    class="col-md-9 h-100"
   >
     <div
-      class="vh-100"
+      class="h-100"
     >
       <div
         class="undefined theme-transition"
-        style="overflow-x: hidden; overflow-y: scroll; height: 768px;"
+        style="overflow-x: hidden; overflow-y: scroll; height: 100%;"
       >
         <nav
           class="navtabs"
@@ -192,7 +197,11 @@ exports[`General tests: normal layout 1`] = `
               
             "
               >
-                fan-art
+                <h3
+                  class="h5"
+                >
+                  fan-art
+                </h3>
               </button>
             </li>
             <li
@@ -207,7 +216,11 @@ exports[`General tests: normal layout 1`] = `
               
             "
               >
-                illustration
+                <h3
+                  class="h5"
+                >
+                  illustration
+                </h3>
               </button>
             </li>
             <li
@@ -222,7 +235,11 @@ exports[`General tests: normal layout 1`] = `
               
             "
               >
-                design
+                <h3
+                  class="h5"
+                >
+                  design
+                </h3>
               </button>
             </li>
           </ul>
@@ -253,6 +270,7 @@ exports[`General tests: normal layout 1`] = `
               <div>
                 <button
                   class="react-reveal btn d-block"
+                  style="opacity: 0;"
                 >
                   <article
                     class="shadow-btn card mb-3"
@@ -268,115 +286,9 @@ exports[`General tests: normal layout 1`] = `
                       <div
                         class="p-3 text"
                       >
-                        <h6>
+                        <h4>
                           Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </button>
-              </div>
-              <div>
-                <button
-                  class="react-reveal btn d-block"
-                >
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </button>
-              </div>
-              <div>
-                <button
-                  class="react-reveal btn d-block"
-                >
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
+                        </h4>
                         <p
                           class="subtitle"
                         >
@@ -412,387 +324,13 @@ exports[`General tests: normal layout 1`] = `
             </div>
             <div
               class="col"
-            >
-              <div>
-                <button
-                  class="react-reveal btn d-block"
-                >
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </button>
-              </div>
-              <div>
-                <button
-                  class="react-reveal btn d-block"
-                >
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </button>
-              </div>
-              <div>
-                <button
-                  class="react-reveal btn d-block"
-                >
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </button>
-              </div>
-            </div>
+            />
             <div
               class="col"
-            >
-              <div>
-                <button
-                  class="react-reveal btn d-block"
-                >
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </button>
-              </div>
-              <div>
-                <button
-                  class="react-reveal btn d-block"
-                >
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </button>
-              </div>
-            </div>
+            />
             <div
               class="col"
-            >
-              <div>
-                <button
-                  class="react-reveal btn d-block"
-                >
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </button>
-              </div>
-              <div>
-                <button
-                  class="react-reveal btn d-block"
-                >
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </button>
-              </div>
-            </div>
+            />
           </div>
         </div>
       </div>
@@ -803,10 +341,10 @@ exports[`General tests: normal layout 1`] = `
 
 exports[`General tests: phone layout 1`] = `
 <div
-  class="row g-0 disable-select"
+  class="d-flex flex-column disable-select vh-100"
 >
   <div
-    class="col-md-3"
+    class="flex-shrink-0 flex-grow-0"
   >
     <header
       class="sidebar theme-transition"
@@ -852,8 +390,13 @@ exports[`General tests: phone layout 1`] = `
           <div
             class="order-md-1"
           >
+            <h1
+              class="visually-hidden"
+            >
+              Welcome to My Rabbit Hole
+            </h1>
             <svg
-              viewBox="0 0 250 138"
+              viewBox="0 0 250 174"
               width="100%"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -879,33 +422,33 @@ exports[`General tests: phone layout 1`] = `
                 y="0"
               >
                 <tspan
-                  dy="46"
-                  font-size="42"
+                  dy="58"
+                  font-size="54"
                   x="0"
                 >
                   Welcome
                 </tspan>
                 <tspan
-                  dy="46"
-                  font-size="42"
+                  dy="58"
+                  font-size="54"
                   x="0"
                 >
                   to my
                 </tspan>
                 <tspan
-                  dy="46"
-                  font-size="42"
+                  dy="58"
+                  font-size="54"
                   x="0"
                 >
                   Rabbit Hole.
                 </tspan>
               </text>
             </svg>
-            <h5
-              class="text-muted mt-5"
+            <h2
+              class="h4 text-muted mt-5"
             >
               Personal Gallery of Solring.
-            </h5>
+            </h2>
             <div
               class="mt-4 d-inline-block mb-3"
             >
@@ -934,12 +477,12 @@ exports[`General tests: phone layout 1`] = `
                   >
                     <a
                       class="btn"
-                      href="https://twitter.com/burntgoldfish"
+                      href="https://sunburnt-goldfish.tumblr.com"
                     >
                       <span
                         class="visually-hidden"
                       >
-                        twitter
+                        tumblr
                       </span>
                     </a>
                   </li>
@@ -948,12 +491,12 @@ exports[`General tests: phone layout 1`] = `
                   >
                     <a
                       class="btn"
-                      href="https://sunburnt-goldfish.tumblr.com"
+                      href="https://twitter.com/burntgoldfish"
                     >
                       <span
                         class="visually-hidden"
                       >
-                        tumblr
+                        twitter
                       </span>
                     </a>
                   </li>
@@ -975,14 +518,14 @@ exports[`General tests: phone layout 1`] = `
     </header>
   </div>
   <div
-    class="col-md-9"
+    class="flex-shrink-1 flex-grow-1 overflow-hidden"
   >
     <div
-      class="vh-100"
+      class="h-100"
     >
       <div
         class="undefined theme-transition"
-        style="overflow-x: hidden; overflow-y: scroll; height: 768px;"
+        style="overflow-x: hidden; overflow-y: scroll; height: 100%;"
       >
         <div
           class="collapse collapse"
@@ -998,7 +541,7 @@ exports[`General tests: phone layout 1`] = `
               >
                 <div>
                   <span
-                    class="text-uppercase"
+                    class="text-uppercase h3"
                   >
                     <span
                       class="material-icons icon md align-middle me-2"
@@ -1040,11 +583,11 @@ exports[`General tests: phone layout 1`] = `
                           class="accordion-button collapsed"
                           type="button"
                         >
-                          <h6
+                          <h3
                             class="text-uppercase"
                           >
                             fan-art
-                          </h6>
+                          </h3>
                         </button>
                       </h2>
                       <div
@@ -1127,11 +670,11 @@ exports[`General tests: phone layout 1`] = `
                           class="accordion-button collapsed"
                           type="button"
                         >
-                          <h6
+                          <h3
                             class="text-uppercase"
                           >
                             illustration
-                          </h6>
+                          </h3>
                         </button>
                       </h2>
                       <div
@@ -1153,11 +696,11 @@ exports[`General tests: phone layout 1`] = `
                           class="accordion-button collapsed"
                           type="button"
                         >
-                          <h6
+                          <h3
                             class="text-uppercase"
                           >
                             design
-                          </h6>
+                          </h3>
                         </button>
                       </h2>
                       <div
@@ -1218,6 +761,7 @@ exports[`General tests: phone layout 1`] = `
               <div>
                 <div
                   class="react-reveal"
+                  style="opacity: 0;"
                 >
                    
                   <article
@@ -1234,495 +778,9 @@ exports[`General tests: phone layout 1`] = `
                       <div
                         class="p-3 text"
                       >
-                        <h6>
+                        <h4>
                           Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="react-reveal"
-                >
-                   
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="react-reveal"
-                >
-                   
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="react-reveal"
-                >
-                   
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="react-reveal"
-                >
-                   
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="react-reveal"
-                >
-                   
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="react-reveal"
-                >
-                   
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="react-reveal"
-                >
-                   
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="react-reveal"
-                >
-                   
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
-                        <p
-                          class="subtitle"
-                        >
-                          this is a test
-                        </p>
-                        <div
-                          class="text-wrap"
-                        >
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag1
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag2
-                          </small>
-                          <small
-                            class="me-1"
-                          >
-                            #
-                            tag3
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="react-reveal"
-                >
-                   
-                  <article
-                    class="shadow-btn card mb-3"
-                  >
-                    <img
-                      alt="Title"
-                      src="emilywang.jpg"
-                    />
-                    <div
-                      class="overlay"
-                      data-longpress="false"
-                    >
-                      <div
-                        class="p-3 text"
-                      >
-                        <h6>
-                          Title
-                        </h6>
+                        </h4>
                         <p
                           class="subtitle"
                         >
@@ -1762,11 +820,11 @@ exports[`General tests: phone layout 1`] = `
           class="btn btn-primary btn-lg rounded-pill border-0 position-fixed end-0 top-0 me-3 mt-5 lh-1 shadow-btn"
           style="z-index: 1010;"
         >
-          <span
+          <h5
             class="text-uppercase"
           >
             :
-          </span>
+          </h5>
         </button>
       </div>
     </div>
