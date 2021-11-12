@@ -129,7 +129,7 @@ function Gallery(props) {
       <GradientScrollable
         color1={gradient1}
         color2={gradient2}
-        height={height}
+        gradientHeight={height}
         onScroll={onScroll}>
 
         { tagsLoading.loading ? <Loading />

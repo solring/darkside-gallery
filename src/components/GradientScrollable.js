@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import useScrollThrottle from '../hooks/useScrollThrottle'
 import { RGBtoHex, hexToRGB } from '../utils/colorUtils'
 
-function GradientScrollable({color1, color2, height, onScroll, ...props}) {
+function GradientScrollable({color1, color2, gradientHeight, onScroll, ...props}) {
   const THROTTLE = 100
 
   const ref = useRef()
@@ -12,17 +12,17 @@ function GradientScrollable({color1, color2, height, onScroll, ...props}) {
 
   const _color1 = hexToRGB(color1)
   const _color2 = hexToRGB(color2)
-  let c1 = Math.floor(pos/height)%2 > 0 ? _color2: _color1
-  let c2 = Math.floor(pos/height)%2 > 0 ? _color1: _color2
+  let c1 = Math.floor(pos/gradientHeight)%2 > 0 ? _color2: _color1
+  let c2 = Math.floor(pos/gradientHeight)%2 > 0 ? _color1: _color2
 
-  let offset = Math.round(pos % height / height * 100) // in percentage
+  let offset = Math.round(pos % gradientHeight / gradientHeight * 100) // in percentage
   let offsetC1 = calcuColor(c2, c1, offset/100)
   let offsetC2 = calcuColor(c1, c2, offset/100)
 
   let style = {
     overflowX: "hidden",
     overflowY: "scroll",
-    height: `${height}px`,
+    height: '100%',
     background: `linear-gradient(${RGBtoHex(offsetC1)} 0%, ${RGBtoHex(c1)} ${offset}%, ${RGBtoHex(offsetC2)} 100%)`,
   }
 
