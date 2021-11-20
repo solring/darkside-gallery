@@ -5,6 +5,7 @@ import { useClickAway, useToggle } from 'react-use'
 
 import GradientWord from './GradientWord'
 import SocialNetworkBtns from './SocialNetworkBtns'
+import EditModal from './EditModal'
 
 import ThemeContext from '../context/ThemeContext'
 
@@ -40,6 +41,8 @@ function Sidebar(props) {
 
   const [on, toggle] = useToggle(true) // default on
 
+  const [add, addToggle] = useToggle(false) // For new article modal
+
   const ref = useRef(null)
 
   useClickAway(ref, () => {
@@ -61,6 +64,9 @@ function Sidebar(props) {
       <div className="order-md-2">
         <CancelTouchWrapper>
           {footer}
+          {!fullscreen &&
+            <button class="btn btn-link" onClick={addToggle}>Post New</button>
+          }
         </CancelTouchWrapper>
       </div>
       <div className="order-md-1">
@@ -80,6 +86,7 @@ function Sidebar(props) {
           <SocialNetworkBtns />
         </CancelTouchWrapper>
       </div>
+      <EditModal toggle={add} setToggle={addToggle}/>
     </div>
   )
 

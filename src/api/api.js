@@ -17,6 +17,24 @@ export const GetCategories = () => ({
   method: 'get',
 })
 
+export const NewArticle = ({
+  title,
+  img,
+  desc,
+  category,
+  tags,
+}) => ({
+  endpoint: `${API_ROOT}/api/article`,
+  method: 'post',
+  json: {
+    title,
+    img,
+    desc,
+    category,
+    tags,
+  }
+})
+
 /**
  * callApi:
  * Do the actual fetch operation
