@@ -13,4 +13,5 @@ export const Default = Template.bind({});
 Default.args = {
   color1: "#4466aa",
   color2: "#ee55aa",
+  texts: ["Hello", "World"],
 }
